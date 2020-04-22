@@ -7,6 +7,7 @@
   - slot{"location":"bengaluru"}
   - action_validate_location
   - slot{"location_ok": true}
+  - slot{"location": "bengaluru"}
   - utter_ask_cuisine
 * restaurant_search{"cuisine":"indian"}
   - slot{"cuisine":"indian"}
@@ -31,6 +32,7 @@
   - slot{"location": "bengaluru"}
   - action_validate_location
   - slot{"location_ok": true}
+  - slot{"location": "bengaluru"}
   - utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
   - slot{"cuisine": "chinese"}
@@ -51,6 +53,7 @@
   - slot{"location": "agra"}
   - action_validate_location
   - slot{"location_ok": true}
+  - slot{"location": "agra"}
   - utter_ask_cuisine
 * restaurant_search{"cuisine": "american"}
   - slot{"cuisine": "american"}
@@ -71,6 +74,7 @@
   - slot{"location": "kolkata"}
   - action_validate_location
   - slot{"location_ok": true}
+  - slot{"location": "kolkata"}
   - utter_ask_cuisine
 * restaurant_search{"cuisine": "north indian"}
   - slot{"cuisine": "north indian"}
@@ -91,6 +95,7 @@
   - slot{"location": "delhi"}
   - action_validate_location
   - slot{"location_ok": true}
+  - slot{"location": "delhi"}
   - utter_ask_cuisine
 * restaurant_search{"cuisine": "south indian"}
   - slot{"cuisine": "chinese"}
@@ -116,6 +121,7 @@
   - slot{"location": "bengaluru"}
   - action_validate_location
   - slot{"location_ok": true}
+  - slot{"location": "bengaluru"}
   - utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
   - slot{"cuisine": "chinese"}
@@ -146,6 +152,7 @@
   - slot{"location": "delhi"}
   - action_validate_location
   - slot{"location_ok": true}
+  - slot{"location": "delhi"}
   - utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
   - slot{"cuisine": "chinese"}
@@ -186,6 +193,7 @@
   - slot{"location": "agra"}
   - action_validate_location
   - slot{"location_ok": true}
+  - slot{"location": "agra"}
   - utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
   - slot{"cuisine": "chinese"}
@@ -232,6 +240,7 @@
   - slot{"location": "warangal"}
   - action_validate_location
   - slot{"location_ok": true}
+  - slot{"location": "warangal"}
   - utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
   - slot{"cuisine": "chinese"}
@@ -276,6 +285,7 @@
   - slot{"location": "kolkata"}
   - action_validate_location
   - slot{"location_ok": true}
+  - slot{"location": "kolkata"}
   - utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
   - slot{"cuisine": "chinese"}
@@ -285,4 +295,3 @@
   - slot{"budgetmin": "300"}
   - action_search_restaurants
   - utter_goodbye
-  

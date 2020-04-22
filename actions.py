@@ -139,7 +139,7 @@ class ActionValidateCityName(Action):
         if not (loc.title() in allowed_cities):
             dispatcher.utter_message("sorry, we don't operate in this city")
             return [SlotSet('location_ok', False)]
-        return [SlotSet('location_ok', True)]
+        return [SlotSet('location_ok', True), SlotSet('location', loc)]
         
 
 
