@@ -18,7 +18,6 @@
   - action_search_restaurants
   - utter_goodbye
 
-
 ## say_goodbye
 * goodbye
   - utter_goodbye
@@ -43,7 +42,6 @@
   - action_search_restaurants
   - utter_goodbye
 
-
 ## story_3
 * greet
   - utter_greet
@@ -64,7 +62,6 @@
   - action_search_restaurants
   - utter_goodbye
 
-
 ## story_4
 * greet
   - utter_greet
@@ -84,7 +81,6 @@
   - slot{"budgetmin": "700"}
   - action_search_restaurants
   - utter_goodbye
-
 
 ## story_5
 * greet
@@ -224,6 +220,85 @@
   - action_search_restaurants
   - utter_goodbye
 
+## story_13
+* greet
+    - slot{"location":"koorg"}
+* restaurant_search{"cuisine":"Italian","location":"koorg"}
+    - slot{"cuisine":"Italian"}
+    - utter_ask_location
+    - slot{"location":"dumri"}
+    - slot{"location_ok": false}
+    - utter_ask_location
+    - slot{"location":"jamtara"}
+    - slot{"location_ok": false}
+    - utter_ask_location
+    - slot{"location":"suri"}
+    - slot{"location_ok": false}
+    - utter_ask_location
+    - slot{"location":"birbhum"}
+    - slot{"location_ok": false}
+    - utter_ask_location
+* restaurant_search{"cuisine":"american","location":"kolkata"}
+    - slot{"cuisine":"american"}
+    - slot{"location":"kolkata"}
+    - slot{"location_ok":true}
+    - utter_ask_budget
+* restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
+    - slot{"budgetmax":1000}
+    - slot{"budgetmin":700}
+    - action_search_restaurants
+    - utter_goodbye
+
+## story_13
+* greet
+    - slot{"location":"koorg"}
+* restaurant_search{"cuisine":"chines","location":"koorg"}
+    - slot{"cuisine":"chinese"}
+    - utter_ask_location
+    - slot{"location":"ooty"}
+    - slot{"location_ok": false}
+    - utter_ask_location
+    - slot{"location":"gaya"}
+    - slot{"location_ok": false}
+    - utter_ask_location
+    - slot{"location":"lahore"}
+    - slot{"location_ok": false}
+    - utter_ask_location
+    - slot{"location":"karchi"}
+    - slot{"location_ok": false}
+    - utter_ask_location
+* restaurant_search{"cuisine":"south india","location":"calcutta"}
+    - slot{"cuisine":"south india"}
+    - slot{"location":"kolkata"}
+    - slot{"location_ok":true}
+    - utter_ask_budget
+* restaurant_search{"budgetmin":"300", "budgetmax":"700"}
+    - slot{"budgetmax":700}
+    - slot{"budgetmin":300}
+    - action_search_restaurants
+    - utter_goodbye
+
+## story_15
+* greet
+    - slot{"location":"koorg"}
+* restaurant_search{"cuisine":"Italian","location":"koorg"}
+    - slot{"cuisine":"Italian"}
+    - utter_ask_location
+    - slot{"location":"silu"}
+    - slot{"location_ok": false}
+    - utter_ask_location
+* restaurant_search{"cuisine":"north indian","location":"bombay"}
+    - slot{"cuisine":"north indian"}
+    - slot{"location":"mumbai"}
+    - slot{"location_ok":true}
+    - utter_ask_budget
+* restaurant_search{"budgetmin":"0", "budgetmax":"300"}
+    - slot{"budgetmax":300}
+    - slot{"budgetmin":0}
+    - action_search_restaurants
+    - utter_goodbye
+
+
 ## fail_story_1
 * greet
   - utter_greet
@@ -248,7 +323,6 @@
   - slot{"budgetmin": "0"}
   - action_search_restaurants
   - utter_goodbye
-
 
 ## fail_story_2
 * greet
@@ -279,7 +353,6 @@
   - slot{"budgetmin": "300"}
   - action_search_restaurants
   - utter_goodbye
-
 
 ## fail_story_3
 * greet
@@ -320,8 +393,6 @@
   - slot{"budgetmin": "700"}
   - action_search_restaurants
   - utter_goodbye
-
-
 
 ## fail_story_4
 * greet
