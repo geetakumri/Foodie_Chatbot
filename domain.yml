@@ -1,0 +1,98 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+- greet
+- restaurant_search
+- goodbye
+- affirm
+- bot_challenge
+- mood_great
+- inform
+
+entities:
+- budgetmax
+- budgetmin
+- cuisine
+- location
+
+slots:
+  budgetmax:
+    type: float
+    initial_value: 10000.0
+    max_value: 10000.0
+    min_value: 0.0
+  budgetmin:
+    type: float
+    initial_value: 1.0
+    max_value: 1.0
+    min_value: 0.0
+  cuisine:
+    type: text
+  location:
+    type: text
+  restaurant_exist:
+    type: bool
+  location_ok:
+    type: bool
+    initial_value: true
+
+responses:
+  utter_ask_budget:
+  - buttons:
+    - payload: /restaurant_search{"budgetmin":0,"budgetmax":300}
+      title: Less than 300
+    - payload: /restaurant_search{"budgetmin":300,"budgetmax":700}
+      title: Rs 300 to Rs 700
+    - payload: /restaurant_search{"budgetmin":700,"budgetmax":1000}
+      title: More than 700
+    text: What price range are you looking for?
+
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Italian
+      title: Italian
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    - payload: American
+      title: American
+    - payload: Mexican
+      title: Mexican
+    text: what kind of cuisine would you like?
+    
+  utter_ask_location:
+  - text: In what location?
+  
+  utter_goodbye:
+  - text: Bye
+
+  utter_greet:
+  - text: hey there! How may i help you
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going. How May I help you Today
+
+  utter_happy:
+  - text: Great, carry on!
+
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+
+  utter_default:
+  - text: Sorry, didn't get you.
+
+actions:
+- utter_ask_location
+- utter_ask_cuisine
+- utter_ask_budget
+- action_validate_location
+- action_search_restaurants
+- utter_default
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_iamabot

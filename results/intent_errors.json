@@ -1,0 +1,58 @@
+[
+  {
+    "text": "Agra",
+    "intent": "restaurant_search",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8634380322520427
+    }
+  },
+  {
+    "text": "Ahmedabad",
+    "intent": "restaurant_search",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8634380322520427
+    }
+  },
+  {
+    "text": "Ajmer",
+    "intent": "restaurant_search",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8680270923129713
+    }
+  },
+  {
+    "text": "Aligarh",
+    "intent": "restaurant_search",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8857175487322104
+    }
+  },
+  {
+    "text": "Allahabad",
+    "intent": "restaurant_search",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8680270923129713
+    }
+  },
+  {
+    "text": "Amravati",
+    "intent": "restaurant_search",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8812245713263602
+    }
+  },
+  {
+    "text": "Amritsar",
+    "intent": "restaurant_search",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.8594222983169064
+    }
+  }
+]
