@@ -11,9 +11,9 @@
 * restaurant_search{"cuisine":"indian"}
   - slot{"cuisine":"indian"}
   - utter_ask_budget
-* restaurant_search{"budgetmin":"300", "budgetmax":"700"}
-  - slot{"budgetmin":"300"}
-  - slot{"budgetmax":"700"}
+* restaurant_search{"budgetmin":"0", "budgetmax":"300"}
+  - slot{"budgetmin":"0"}
+  - slot{"budgetmax":"300"}
   - action_search_restaurants
   - utter_goodbye
 
@@ -35,9 +35,9 @@
 * restaurant_search{"cuisine": "chinese"}
   - slot{"cuisine": "chinese"}
   - utter_ask_budget
-* restaurant_search{"budgetmin": "300", "budgetmax": "700"}
-  - slot{"budgetmax": "700"}
-  - slot{"budgetmin": "300"}
+* restaurant_search{"budgetmin": "0", "budgetmax": "300"}
+  - slot{"budgetmax": "300"}
+  - slot{"budgetmin": "0"}
   - action_search_restaurants
   - utter_goodbye
 
@@ -75,9 +75,9 @@
 * restaurant_search{"cuisine": "north indian"}
   - slot{"cuisine": "north indian"}
   - utter_ask_budget
-* restaurant_search{"budgetmin": "300", "budgetmax": "700"}
-  - slot{"budgetmax": "700"}
-  - slot{"budgetmin": "300"}
+* restaurant_search{"budgetmin": "700", "budgetmax": "1000"}
+  - slot{"budgetmax": "1000"}
+  - slot{"budgetmin": "700"}
   - action_search_restaurants
   - utter_goodbye
 
@@ -95,9 +95,9 @@
 * restaurant_search{"cuisine": "south indian"}
   - slot{"cuisine": "chinese"}
   - utter_ask_budget
-* restaurant_search{"budgetmin": "300", "budgetmax": "700"}
-  - slot{"budgetmax": "700"}
-  - slot{"budgetmin": "300"}
+* restaurant_search{"budgetmin": "700", "budgetmax": "1000"}
+  - slot{"budgetmax": "1000"}
+  - slot{"budgetmin": "700"}
   - action_search_restaurants
   - utter_goodbye
 
@@ -120,9 +120,9 @@
 * restaurant_search{"cuisine": "chinese"}
   - slot{"cuisine": "chinese"}
   - utter_ask_budget
-* restaurant_search{"budgetmin": "300", "budgetmax": "700"}
-  - slot{"budgetmax": "700"}
-  - slot{"budgetmin": "300"}
+* restaurant_search{"budgetmin": "0", "budgetmax": "300"}
+  - slot{"budgetmax": "300"}
+  - slot{"budgetmin": "0"}
   - action_search_restaurants
   - utter_goodbye
 
@@ -190,9 +190,9 @@
 * restaurant_search{"cuisine": "chinese"}
   - slot{"cuisine": "chinese"}
   - utter_ask_budget
-* restaurant_search{"budgetmin": "300", "budgetmax": "700"}
-  - slot{"budgetmax": "700"}
-  - slot{"budgetmin": "300"}
+* restaurant_search{"budgetmin": "700", "budgetmax": "1000"}
+  - slot{"budgetmax": "1000"}
+  - slot{"budgetmin": "700"}
   - action_search_restaurants
   - utter_goodbye
 
@@ -236,9 +236,9 @@
 * restaurant_search{"cuisine": "chinese"}
   - slot{"cuisine": "chinese"}
   - utter_ask_budget
-* restaurant_search{"budgetmin": "300", "budgetmax": "700"}
-  - slot{"budgetmax": "700"}
-  - slot{"budgetmin": "300"}
+* restaurant_search{"budgetmin": "0", "budgetmax": "300"}
+  - slot{"budgetmax": "300"}
+  - slot{"budgetmin": "0"}
   - action_search_restaurants
   - utter_goodbye
 
