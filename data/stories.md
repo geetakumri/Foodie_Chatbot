@@ -242,8 +242,6 @@
   - action_search_restaurants
   - utter_goodbye
 
-
-
 ## fail_story_5
 * greet
   - utter_greet
