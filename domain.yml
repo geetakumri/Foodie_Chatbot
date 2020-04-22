@@ -18,12 +18,12 @@ slots:
   budgetmax:
     type: float
     initial_value: 10000.0
-    max_value: 1.0
+    max_value: 1000.0
     min_value: 0.0
   budgetmin:
     type: float
     initial_value: 1.0
-    max_value: 1.0
+    max_value: 700.0
     min_value: 0.0
   cuisine:
     type: text

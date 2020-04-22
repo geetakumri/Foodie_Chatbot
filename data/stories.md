@@ -225,23 +225,31 @@
     - slot{"location":"koorg"}
 * restaurant_search{"cuisine":"Italian","location":"koorg"}
     - slot{"cuisine":"Italian"}
+    - action_validate_location
+    - slot{"location_ok": false}
     - utter_ask_location
     - slot{"location":"dumri"}
+    - action_validate_location
     - slot{"location_ok": false}
     - utter_ask_location
     - slot{"location":"jamtara"}
+    - action_validate_location
     - slot{"location_ok": false}
     - utter_ask_location
     - slot{"location":"suri"}
+    - action_validate_location
     - slot{"location_ok": false}
     - utter_ask_location
     - slot{"location":"birbhum"}
+    - action_validate_location
     - slot{"location_ok": false}
     - utter_ask_location
 * restaurant_search{"cuisine":"american","location":"kolkata"}
     - slot{"cuisine":"american"}
     - slot{"location":"kolkata"}
+    - action_validate_location
     - slot{"location_ok":true}
+    - slot{"location":"kolkata"}
     - utter_ask_budget
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
     - slot{"budgetmax":1000}
@@ -249,28 +257,34 @@
     - action_search_restaurants
     - utter_goodbye
 
-## story_13
+## story_14
 * greet
     - slot{"location":"koorg"}
 * restaurant_search{"cuisine":"chines","location":"koorg"}
     - slot{"cuisine":"chinese"}
     - utter_ask_location
     - slot{"location":"ooty"}
+    - action_validate_location
     - slot{"location_ok": false}
     - utter_ask_location
     - slot{"location":"gaya"}
+    - action_validate_location
     - slot{"location_ok": false}
     - utter_ask_location
     - slot{"location":"lahore"}
+    - action_validate_location
     - slot{"location_ok": false}
     - utter_ask_location
     - slot{"location":"karchi"}
+    - action_validate_location
     - slot{"location_ok": false}
     - utter_ask_location
 * restaurant_search{"cuisine":"south india","location":"calcutta"}
     - slot{"cuisine":"south india"}
     - slot{"location":"kolkata"}
+    - action_validate_location
     - slot{"location_ok":true}
+    - slot{"location":"kolkata"}
     - utter_ask_budget
 * restaurant_search{"budgetmin":"300", "budgetmax":"700"}
     - slot{"budgetmax":700}
@@ -285,11 +299,13 @@
     - slot{"cuisine":"Italian"}
     - utter_ask_location
     - slot{"location":"silu"}
+    - action_validate_location
     - slot{"location_ok": false}
     - utter_ask_location
 * restaurant_search{"cuisine":"north indian","location":"bombay"}
     - slot{"cuisine":"north indian"}
     - slot{"location":"mumbai"}
+    - action_validate_location
     - slot{"location_ok":true}
     - utter_ask_budget
 * restaurant_search{"budgetmin":"0", "budgetmax":"300"}
