@@ -103,7 +103,7 @@
 - Please find me a restaurantin [bangalore](location)
 - show me restaurants
 - please find me [chinese](cuisine) restaurant in [delhi](location)
-- can you find me a [chinese](cuisine) restaurant
+- can you find me a [north india](cuisine:North Indian) restaurant
 - please find me a restaurant in [ahmedabad](location)
 - please show me a few [italian](cuisine) restaurants in [bangalore](location)
 - any [Italian](cuisine) place in [Lucknow](location) for range [500](budgetmin) - [700](budgetmax)
@@ -116,7 +116,7 @@
 - can you please find me a [italian](cuisine) restaurant in [mumbai](location)
 - can you please find me a [american](cuisine) restaurant in [delhi](location)
 - can you please find me a [mexican](cuisine) restaurant in [kolkata](location)
-- find me a [south indian](cuisine) restaurant in [pune](location)
+- find me a [south india](cuisine:South Indian) restaurant in [pune](location)
 - find me a [north indian](cuisine) restaurant in [agra](location)
 - suggest me a [italian](cuisine) restaurant in [warangal](location)
 - tell me a [american](cuisine) restaurant in [Meerut](location)
