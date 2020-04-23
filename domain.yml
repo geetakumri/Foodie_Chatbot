@@ -14,10 +14,11 @@ entities:
 - budgetmin
 - cuisine
 - location
+- email_id
 slots:
   budgetmax:
     type: float
-    initial_value: 10000.0
+    initial_value: 1000.0
     max_value: 1000.0
     min_value: 0.0
   budgetmin:
@@ -34,6 +35,8 @@ slots:
     initial_value: true
   restaurant_exist:
     type: bool
+  email_id:
+    type: text
 responses:
   utter_ask_budget:
   - buttons:
@@ -73,12 +76,15 @@ responses:
   - text: I am a bot, powered by Rasa.
   utter_default:
   - text: Sorry, didn't get you.
+  utter_ask_email_id:
+  - text: If you want to get these restaurants details on you email. Please enter you email_id
 actions:
 - utter_ask_location
 - utter_ask_cuisine
 - utter_ask_budget
 - action_validate_location
 - action_search_restaurants
+- action_send_email
 - utter_default
 - utter_goodbye
 - utter_greet

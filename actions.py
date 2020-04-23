@@ -28,7 +28,7 @@ import requests
 # Import smtplib for the email sending function
 import smtplib
 from concurrent.futures import ThreadPoolExecutor
-d_email_rest = []
+response = ''
 
 class ActionSearchRestaurants(Action):
     def name(self):
@@ -50,6 +50,7 @@ class ActionSearchRestaurants(Action):
             return [SlotSet('location', loc), SlotSet('restaurant_exist', False)]
 
         results, lat, lon = self.get_location_suggestions(loc, zomato)
+        print('result {}'.format(results))
 
         if results == 0:
             restaurant_exist = False
@@ -61,11 +62,15 @@ class ActionSearchRestaurants(Action):
 
             budget_restaurant_sorted = sorted(budget_restaurant, key = lambda x: x['restaurant']['user_rating']['aggregate_rating'], reverse = True)
 
-            response = ""
+            global response
+            if response:
+                response = ''
+            
             restaurant_exist = False
 
             if len(budget_restaurant_sorted) == 0:
                 dispatcher.utter_message("no results")
+                return
             else:
                 top5_restaurant = budget_restaurant_sorted[:5]
 
@@ -123,6 +128,10 @@ class ActionValidateCityName(Action):
         loc = tracker.get_slot('location')
         print('location name: {}'.format(loc))
 
+        if not loc:
+            dispatcher.utter_message("Please enter a location")
+            return [SlotSet('location_ok', False)]
+
         allowed_cities = ['Agra', 'Ahmedabad', 'Ajmer', 'Aligarh', 'Allahabad', 'Amravati', 'Amritsar',
             'Asansol', 'Aurangabad', 'Bangalore', 'Bareilly', 'Belgaum', 'Bhavnagar', 'Bhilai', 'Bhiwandi', 'Bhopal', 
             'Bhubaneswar', 'Bikaner', 'Bokaro Steel City', 'Chandigarh', 'Chennai', 'Coimbatore', 'Cuttack', 'Dehradun', 
@@ -140,6 +149,55 @@ class ActionValidateCityName(Action):
             dispatcher.utter_message("sorry, we don't operate in this city")
             return [SlotSet('location_ok', False)]
         return [SlotSet('location_ok', True), SlotSet('location', loc)]
+
+class SendEmailAction(Action):
+    def name(self):
+        return 'action_send_email'
+    
+    def run(self, dispatcher, tracker, domain):
+        to_email_id = tracker.get_slot("email_id")
+
+        if not to_email_id:
+            #dispatcher.utter_message('Good Bye')
+            return
+
+        location = tracker.get_slot('location')
+        cuisine = tracker.get_slot('cuisine')
+
+        global response
+        email_sub = self.get_email_subject(location, cuisine)
+        email_body = '''Hi User,
+        Please find top {} restaurants in {}.
+        {}
+        Sincerely,
+        Foodie Chatbot'''.format(cuisine, location, response)
+
+        self.send_email(to_email_id, email_sub, email_body)
+
+        dispatcher.utter_message('Restaurants list has been send to you email. Enjoy!!')
+
+    def send_email(self, to_email_id, email_sub, email_body):
+        sender_email_add = 'chatbotfoodie1@gmail.com'
+        passowrd = 'V3BpvmqeaEgy8RC'
+
+        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server.starttls()
+        server.login(sender_email_add, passowrd)
+
+        email = EmailMessage()
+        email['Subject'] = email_sub
+        email['To'] = to_email_id
+        email['From'] = sender_email_add
+        email.set_content(email_body)
+
+        server.send_message(email)
+        server.quit()
+    
+    def get_email_subject(self, location, cuisine):
+        return 'Top {} restaurants in {}'.format(cuisine.title(), location.title())
+
+
+
         
 
 

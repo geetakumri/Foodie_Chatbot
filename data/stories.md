@@ -16,6 +16,9 @@
   - slot{"budgetmin":"0"}
   - slot{"budgetmax":"300"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"abc@gmail.com"}
+  - action_send_email
   - utter_goodbye
 
 ## say_goodbye
@@ -40,6 +43,9 @@
   - slot{"budgetmax": "300"}
   - slot{"budgetmin": "0"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"efg.cdf@gmail.com"}
+  - action_send_email
   - utter_goodbye
 
 ## story_3
@@ -60,6 +66,9 @@
   - slot{"budgetmax": "700"}
   - slot{"budgetmin": "300"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"efg.cdf@gmail.com"}
+  - action_send_email
   - utter_goodbye
 
 ## story_4
@@ -80,6 +89,9 @@
   - slot{"budgetmax": "1000"}
   - slot{"budgetmin": "700"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"efg.cdf@yahoo.com"}
+  - action_send_email
   - utter_goodbye
 
 ## story_5
@@ -100,6 +112,9 @@
   - slot{"budgetmax": "1000"}
   - slot{"budgetmin": "700"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"sam123@outlook.com"}
+  - action_send_email
   - utter_goodbye
 
   ## story_6
@@ -118,6 +133,9 @@
   - slot{"budgetmin":"0"}
   - slot{"budgetmax":"300"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"sam123@outlook.com"}
+  - action_send_email
   - utter_goodbye
 
 ## story_7
@@ -136,6 +154,9 @@
   - slot{"budgetmin":"300"}
   - slot{"budgetmax":"700"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"asha@yahoo.com"}
+  - action_send_email
   - utter_goodbye
 
 ## story_8
@@ -154,70 +175,85 @@
   - slot{"budgetmin":"700"}
   - slot{"budgetmax":"1000"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"shan@yahoo.com"}
+  - action_send_email
   - utter_goodbye
 
   ## story_9
 * greet
   - utter_greet
 * restaurant_search{"location":"agra","cuisine":"italian"}
+  - slot{"cuisine":"italian"}
   - slot{"location":"agra"}
   - action_validate_location
   - slot{"location_ok": true}
   - slot{"location": "agra"}
-  - slot{"cuisine":"italian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"0", "budgetmax":"300"}
   - slot{"budgetmin":"0"}
   - slot{"budgetmax":"300"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"srk@gmail.com"}
+  - action_send_email
   - utter_goodbye
 
 ## story_10
 * greet
   - utter_greet
 * restaurant_search{"location":"surat","cuisine":"mexican"}
+  - slot{"cuisine":"mexican"}
   - slot{"location":"surat"}
   - action_validate_location
   - slot{"location_ok": true}
   - slot{"location": "surat"}
-  - slot{"cuisine":"mexican"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
   - slot{"budgetmin":"700"}
   - slot{"budgetmax":"1000"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"aamir@outlook.com"}
+  - action_send_email
   - utter_goodbye
 
 ## story_11
 * greet
   - utter_greet
 * restaurant_search{"location":"mumbai","cuisine":"north indian"}
+  - slot{"cuisine":"north indian"}
   - slot{"location":"mumbai"}
   - action_validate_location
   - slot{"location_ok": true}
   - slot{"location": "mumbai"}
-  - slot{"cuisine":"north indian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
   - slot{"budgetmin":"700"}
   - slot{"budgetmax":"1000"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"amit@in.com"}
+  - action_send_email
   - utter_goodbye
 
 ## story_12
 * greet
   - utter_greet
 * restaurant_search{"location":"delhi","cuisine":"south indian"}
+  - slot{"cuisine":"south indian"}
   - slot{"location":"delhi"}
   - action_validate_location
   - slot{"location_ok": true}
   - slot{"location": "delhi"}
-  - slot{"cuisine":"south indian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
   - slot{"budgetmin":"700"}
   - slot{"budgetmax":"1000"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"amit123@gmail.com"}
+  - action_send_email
   - utter_goodbye
 
 ## story_13
@@ -255,6 +291,9 @@
     - slot{"budgetmax":1000}
     - slot{"budgetmin":700}
     - action_search_restaurants
+    - utter_ask_email_id
+  * restaurant_search{"email_id":"salaman@gmail.com"}
+    - action_send_email
     - utter_goodbye
 
 ## story_14
@@ -290,6 +329,9 @@
     - slot{"budgetmax":700}
     - slot{"budgetmin":300}
     - action_search_restaurants
+    - utter_ask_email_id
+  * restaurant_search{"email_id":"aamir@yahoo.com"}
+    - action_send_email
     - utter_goodbye
 
 ## story_15
@@ -312,6 +354,9 @@
     - slot{"budgetmax":300}
     - slot{"budgetmin":0}
     - action_search_restaurants
+    - utter_ask_email_id
+  * restaurant_search{"email_id":"aamir1234@yahoo.com"}
+    - action_send_email
     - utter_goodbye
 
 
@@ -338,6 +383,9 @@
   - slot{"budgetmax": "300"}
   - slot{"budgetmin": "0"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"srk@yahoo.com"}
+  - action_send_email
   - utter_goodbye
 
 ## fail_story_2
@@ -368,6 +416,9 @@
   - slot{"budgetmax": "700"}
   - slot{"budgetmin": "300"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"srk@outlook.com"}
+  - action_send_email
   - utter_goodbye
 
 ## fail_story_3
@@ -408,6 +459,9 @@
   - slot{"budgetmax": "1000"}
   - slot{"budgetmin": "700"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"srk@outlook.com"}
+  - action_send_email
   - utter_goodbye
 
 ## fail_story_4
@@ -453,6 +507,9 @@
   - slot{"budgetmax": "300"}
   - slot{"budgetmin": "0"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"sid@outlook.com"}
+  - action_send_email
   - utter_goodbye
 
 ## fail_story_5
@@ -498,16 +555,19 @@
   - slot{"budgetmax": "700"}
   - slot{"budgetmin": "300"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"sid@gmail.com"}
+  - action_send_email
   - utter_goodbye
 
   ## fail_story_6
 * greet
   - utter_greet
 * restaurant_search{"location":"koorg","cuisine":"south indian"}
+  - slot{"cuisine":"south indian"}
   - slot{"location":"koorg"}
   - action_validate_location
   - slot{"location_ok": false}
-  - slot{"cuisine":"south indian"}
   - utter_ask_location
 * restaurant_search{"location": "tokyo"}
   - slot{"location": "tokyo"}
@@ -524,16 +584,19 @@
   - slot{"budgetmin":"300"}
   - slot{"budgetmax":"700"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"srk@yahoo.com"}
+  - action_send_email
   - utter_goodbye
 
   ## fail_story_7
 * greet
   - utter_greet
 * restaurant_search{"location":"asansol","cuisine":"north indian"}
+  - slot{"cuisine":"nouth indian"}
   - slot{"location":"asansol"}
   - action_validate_location
   - slot{"location_ok": false}
-  - slot{"cuisine":"nouth indian"}
   - utter_ask_location
 * restaurant_search{"location": "durgapur"}
   - slot{"location": "durgapur"}
@@ -555,5 +618,8 @@
   - slot{"budgetmin":"700"}
   - slot{"budgetmax":"1000"}
   - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"jhantu@outlook.com"}
+  - action_send_email
   - utter_goodbye
   
