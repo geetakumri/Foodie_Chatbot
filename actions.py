@@ -77,7 +77,7 @@ class ActionSearchRestaurants(Action):
             for restaurant in top5_restaurant:
                 response = response + "Found " + restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] + " has been rated " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
 
-            dispatcher.utter_message("-----\n{}\n-----\n".format(response))
+            dispatcher.utter_message("-----\n{}-----\n".format(response))
         return [SlotSet('location', loc), SlotSet('restaurant_exist', restaurant_exist)]
     
 
@@ -166,7 +166,7 @@ class SendEmailAction(Action):
 
         global response
         email_sub = self.get_email_subject(location, cuisine)
-        email_body = 'Hi User,\nPlease find top {} restaurants in {}.\n\n{}\nSincerely,\nFoodie Chatbot'.format(cuisine, location, response)
+        email_body = 'Hi User,\nPlease find top {} restaurants in {}.\n\n{}Sincerely,\nFoodie Chatbot'.format(cuisine, location, response)
 
         self.send_email(to_email_id, email_sub, email_body)
 
@@ -183,7 +183,7 @@ class SendEmailAction(Action):
         email = EmailMessage()
         email['Subject'] = email_sub
         email['To'] = to_email_id
-        email['From'] = sender_email_add
+        email['From'] = 'Foodie <{}>'.format(sender_email_add)
         email.set_content(email_body)
 
         server.send_message(email)
