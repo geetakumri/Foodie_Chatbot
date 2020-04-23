@@ -184,11 +184,11 @@
 * greet
   - utter_greet
 * restaurant_search{"location":"agra","cuisine":"italian"}
-  - slot{"cuisine":"italian"}
   - slot{"location":"agra"}
   - action_validate_location
   - slot{"location_ok": true}
   - slot{"location": "agra"}
+  - slot{"cuisine":"italian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"0", "budgetmax":"300"}
   - slot{"budgetmin":"0"}
@@ -203,11 +203,11 @@
 * greet
   - utter_greet
 * restaurant_search{"location":"surat","cuisine":"mexican"}
-  - slot{"cuisine":"mexican"}
   - slot{"location":"surat"}
   - action_validate_location
   - slot{"location_ok": true}
   - slot{"location": "surat"}
+  - slot{"cuisine":"mexican"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
   - slot{"budgetmin":"700"}
@@ -222,11 +222,11 @@
 * greet
   - utter_greet
 * restaurant_search{"location":"mumbai","cuisine":"north indian"}
-  - slot{"cuisine":"north indian"}
   - slot{"location":"mumbai"}
   - action_validate_location
   - slot{"location_ok": true}
   - slot{"location": "mumbai"}
+  - slot{"cuisine":"north indian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
   - slot{"budgetmin":"700"}
@@ -241,11 +241,11 @@
 * greet
   - utter_greet
 * restaurant_search{"location":"delhi","cuisine":"south indian"}
-  - slot{"cuisine":"south indian"}
   - slot{"location":"delhi"}
   - action_validate_location
   - slot{"location_ok": true}
   - slot{"location": "delhi"}
+  - slot{"cuisine":"south indian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
   - slot{"budgetmin":"700"}
@@ -259,8 +259,7 @@
 ## story_13
 * greet
     - slot{"location":"koorg"}
-* restaurant_search{"cuisine":"Italian","location":"koorg"}
-    - slot{"cuisine":"Italian"}
+* restaurant_search{"location":"koorg","cuisine":"Italian"}
     - action_validate_location
     - slot{"location_ok": false}
     - utter_ask_location
@@ -280,12 +279,13 @@
     - action_validate_location
     - slot{"location_ok": false}
     - utter_ask_location
-* restaurant_search{"cuisine":"american","location":"kolkata"}
-    - slot{"cuisine":"american"}
+    - slot{"cuisine":"Italian"}
+* restaurant_search{"location":"kolkata","cuisine":"american"}
     - slot{"location":"kolkata"}
     - action_validate_location
     - slot{"location_ok":true}
     - slot{"location":"kolkata"}
+    - slot{"cuisine":"american"}
     - utter_ask_budget
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
     - slot{"budgetmax":1000}
@@ -299,8 +299,7 @@
 ## story_14
 * greet
     - slot{"location":"koorg"}
-* restaurant_search{"cuisine":"chines","location":"koorg"}
-    - slot{"cuisine":"chinese"}
+* restaurant_search{"location":"koorg","cuisine":"chines"}
     - utter_ask_location
     - slot{"location":"ooty"}
     - action_validate_location
@@ -317,9 +316,10 @@
     - slot{"location":"karchi"}
     - action_validate_location
     - slot{"location_ok": false}
+    - slot{"cuisine":"chinese"}
     - utter_ask_location
-* restaurant_search{"cuisine":"south india","location":"calcutta"}
-    - slot{"cuisine":"south india"}
+* restaurant_search{"location":"calcutta", "cuisine":"south indian"}
+    - slot{"cuisine":"south indian"}
     - slot{"location":"kolkata"}
     - action_validate_location
     - slot{"location_ok":true}
@@ -337,18 +337,18 @@
 ## story_15
 * greet
     - slot{"location":"koorg"}
-* restaurant_search{"cuisine":"Italian","location":"koorg"}
-    - slot{"cuisine":"Italian"}
+* restaurant_search{"location":"koorg","cuisine":"Italian"}
     - utter_ask_location
-    - slot{"location":"silu"}
+    - slot{"location":"koorg"}
     - action_validate_location
     - slot{"location_ok": false}
+    - slot{"cuisine":"Italian"}
     - utter_ask_location
-* restaurant_search{"cuisine":"north indian","location":"bombay"}
-    - slot{"cuisine":"north indian"}
+* restaurant_search{"location":"bombay","cuisine":"north indian"}
     - slot{"location":"mumbai"}
     - action_validate_location
     - slot{"location_ok":true}
+    - slot{"cuisine":"north indian"}
     - utter_ask_budget
 * restaurant_search{"budgetmin":"0", "budgetmax":"300"}
     - slot{"budgetmax":300}
@@ -564,7 +564,6 @@
 * greet
   - utter_greet
 * restaurant_search{"location":"koorg","cuisine":"south indian"}
-  - slot{"cuisine":"south indian"}
   - slot{"location":"koorg"}
   - action_validate_location
   - slot{"location_ok": false}
@@ -579,6 +578,7 @@
   - action_validate_location
   - slot{"location_ok": true}
   - slot{"location": "kolkata"}
+  - slot{"cuisine":"south indian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"300", "budgetmax":"700"}
   - slot{"budgetmin":"300"}
@@ -593,7 +593,6 @@
 * greet
   - utter_greet
 * restaurant_search{"location":"asansol","cuisine":"north indian"}
-  - slot{"cuisine":"nouth indian"}
   - slot{"location":"asansol"}
   - action_validate_location
   - slot{"location_ok": false}
@@ -613,6 +612,7 @@
   - action_validate_location
   - slot{"location_ok": true}
   - slot{"location": "Lucknow"}
+  - slot{"cuisine":"nouth indian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
   - slot{"budgetmin":"700"}
