@@ -74,6 +74,7 @@
 - I’m hungry. Looking out for some good [chinese](cuisine) restaurants in [chandigarh](location)
 - Can you suggest some good restaurants in [Rishikesh](location)
 - Can you suggest some good restaurants in [kolkata](location)
+- suggest some good restaurants in [kolkata](location)
 - I am looking for some good restaurants in [Delhi](location).
 - I am looking for some place to eat in [Bangalore](location)
 - show me [chinese](cuisine) restaurants
@@ -91,7 +92,10 @@
 - want to know some good [Chinese](cuisine:chinese) restaurants
 - want to eat in [chinese](cuisine) restaurants
 - Oh, sorry, in [Italy](location)
+- suggest me some good restaurants in [pune](location)
 - in [delhi](location)
+- suggest me good restaurants in [mumbai](location)
+- suggest some good restaurants in [delhi](location)
 - I am looking for some restaurants in [Mumbai](location)
 - I am looking for [mexican indian fusion](cuisine)
 - provide me restaurants in [central](location) [indian](cuisine) restaurant
@@ -110,6 +114,12 @@
 - between [300](budgetmin) and [400](budgetmax)
 - budget is between [600](budgetmin) - [700](budgetmax)
 - can you please find me a [italian](cuisine) restaurant in [mumbai](location)
+- can you please find me a [american](cuisine) restaurant in [delhi](location)
+- can you please find me a [mexican](cuisine) restaurant in [kolkata](location)
+- find me a [south indian](cuisine) restaurant in [pune](location)
+- find me a [north indian](cuisine) restaurant in [agra](location)
+- suggest me a [italian](cuisine) restaurant in [warangal](location)
+- tell me a [american](cuisine) restaurant in [Meerut](location)
 - i want [Chinese](cuisine:chinese) food
 - [jhantu@outlook.com](email_id)
 - [srk@outlook.com](email_id)
@@ -235,6 +245,12 @@
 - [Vijayawada](location)
 - [Visakhapatnam](location)
 - [Warangal](location)
+- [chinese](cuisine)
+- [american](cuisine)
+- [south indian](cuisine)
+- [north indian](cuisine)
+- [italian](cuisine)
+- [mexican](cuisine)
 
 ## synonym:4
 - four

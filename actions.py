@@ -77,7 +77,7 @@ class ActionSearchRestaurants(Action):
             for restaurant in top5_restaurant:
                 response = response + "Found " + restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] + " has been rated " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
 
-            dispatcher.utter_message("-----\n {} \n-----\n".format(response))
+            dispatcher.utter_message("-----\n{}\n-----\n".format(response))
         return [SlotSet('location', loc), SlotSet('restaurant_exist', restaurant_exist)]
     
 

@@ -20,6 +20,7 @@
 * restaurant_search{"email_id":"abc@gmail.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
 ## say_goodbye
 * goodbye
@@ -47,6 +48,7 @@
 * restaurant_search{"email_id":"efg.cdf@gmail.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
 ## story_3
 * greet
@@ -70,6 +72,7 @@
 * restaurant_search{"email_id":"efg.cdf@gmail.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
 ## story_4
 * greet
@@ -93,6 +96,7 @@
 * restaurant_search{"email_id":"efg.cdf@yahoo.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
 ## story_5
 * greet
@@ -106,7 +110,7 @@
   - slot{"location": "delhi"}
   - utter_ask_cuisine
 * restaurant_search{"cuisine": "south indian"}
-  - slot{"cuisine": "chinese"}
+  - slot{"cuisine": "south indian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin": "700", "budgetmax": "1000"}
   - slot{"budgetmax": "1000"}
@@ -116,6 +120,7 @@
 * restaurant_search{"email_id":"sam123@outlook.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
   ## story_6
 * greet
@@ -137,6 +142,7 @@
 * restaurant_search{"email_id":"sam123@outlook.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
 ## story_7
 * greet
@@ -158,6 +164,7 @@
 * restaurant_search{"email_id":"asha@yahoo.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
 ## story_8
 * greet
@@ -179,6 +186,7 @@
 * restaurant_search{"email_id":"shan@yahoo.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
   ## story_9
 * greet
@@ -198,6 +206,7 @@
 * restaurant_search{"email_id":"srk@gmail.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
 ## story_10
 * greet
@@ -217,6 +226,7 @@
 * restaurant_search{"email_id":"aamir@outlook.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
 ## story_11
 * greet
@@ -236,6 +246,7 @@
 * restaurant_search{"email_id":"amit@in.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
 ## story_12
 * greet
@@ -255,109 +266,121 @@
 * restaurant_search{"email_id":"amit123@gmail.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
 ## story_13
 * greet
-    - slot{"location":"koorg"}
-* restaurant_search{"location":"koorg","cuisine":"Italian"}
-    - action_validate_location
-    - slot{"location_ok": false}
-    - utter_ask_location
-    - slot{"location":"dumri"}
-    - action_validate_location
-    - slot{"location_ok": false}
-    - utter_ask_location
-    - slot{"location":"jamtara"}
-    - action_validate_location
-    - slot{"location_ok": false}
-    - utter_ask_location
-    - slot{"location":"suri"}
-    - action_validate_location
-    - slot{"location_ok": false}
-    - utter_ask_location
-    - slot{"location":"birbhum"}
-    - action_validate_location
-    - slot{"location_ok": false}
-    - utter_ask_location
-    - slot{"cuisine":"Italian"}
-* restaurant_search{"location":"kolkata","cuisine":"american"}
-    - slot{"location":"kolkata"}
-    - action_validate_location
-    - slot{"location_ok":true}
-    - slot{"location":"kolkata"}
-    - slot{"cuisine":"american"}
-    - utter_ask_budget
+  - utter_greet
+* restaurant_search{"location":"koorg","cuisine":"italian"}
+  - slot{"location": "koorg"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location":"dumri"}
+  - slot{"location":"dumri"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location":"jamtara"}
+  - slot{"location":"jamtara"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location":"suri"}
+  - slot{"location":"suri"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location":"birbhum"}
+  - slot{"location":"birbhum"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location":"kolkata"}
+  - slot{"location":"kolkata"}
+  - action_validate_location
+  - slot{"location_ok":true}
+  - slot{"location":"kolkata"}
+  - slot{"cuisine":"italian"}
+  - utter_ask_budget
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
-    - slot{"budgetmax":1000}
-    - slot{"budgetmin":700}
-    - action_search_restaurants
-    - utter_ask_email_id
-  * restaurant_search{"email_id":"salaman@gmail.com"}
-    - action_send_email
-    - utter_goodbye
+  - slot{"budgetmax":1000}
+  - slot{"budgetmin":700}
+  - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"salaman@gmail.com"}
+  - action_send_email
+  - utter_goodbye
+  - action_restart
 
 ## story_14
 * greet
-    - slot{"location":"koorg"}
+  - utter_greet  
 * restaurant_search{"location":"koorg","cuisine":"chines"}
-    - utter_ask_location
-    - slot{"location":"ooty"}
-    - action_validate_location
-    - slot{"location_ok": false}
-    - utter_ask_location
-    - slot{"location":"gaya"}
-    - action_validate_location
-    - slot{"location_ok": false}
-    - utter_ask_location
-    - slot{"location":"lahore"}
-    - action_validate_location
-    - slot{"location_ok": false}
-    - utter_ask_location
-    - slot{"location":"karchi"}
-    - action_validate_location
-    - slot{"location_ok": false}
-    - slot{"cuisine":"chinese"}
-    - utter_ask_location
-* restaurant_search{"location":"calcutta", "cuisine":"south indian"}
-    - slot{"cuisine":"south indian"}
-    - slot{"location":"kolkata"}
-    - action_validate_location
-    - slot{"location_ok":true}
-    - slot{"location":"kolkata"}
-    - utter_ask_budget
+  - slot{"location":"koorg"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location":"ooty"}
+  - slot{"location":"ooty"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location":"gaya"}
+  - slot{"location":"gaya"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location":"lahore"}
+  - slot{"location":"lahore"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location":"karachi"}
+  - slot{"location":"karchi"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location":"kolkata"}
+  - slot{"location":"kolkata"}
+  - action_validate_location
+  - slot{"location_ok":true}
+  - slot{"location":"kolkata"}
+  - slot{"cuisine":"south indian"}
+  - utter_ask_budget
 * restaurant_search{"budgetmin":"300", "budgetmax":"700"}
-    - slot{"budgetmax":700}
-    - slot{"budgetmin":300}
-    - action_search_restaurants
-    - utter_ask_email_id
+  - slot{"budgetmax":700}
+  - slot{"budgetmin":300}
+  - action_search_restaurants
+  - utter_ask_email_id
   * restaurant_search{"email_id":"aamir@yahoo.com"}
-    - action_send_email
-    - utter_goodbye
+  - action_send_email
+  - utter_goodbye
+  - action_restart
 
 ## story_15
 * greet
-    - slot{"location":"koorg"}
+  - utter_greet
 * restaurant_search{"location":"koorg","cuisine":"Italian"}
-    - utter_ask_location
-    - slot{"location":"koorg"}
-    - action_validate_location
-    - slot{"location_ok": false}
-    - slot{"cuisine":"Italian"}
-    - utter_ask_location
-* restaurant_search{"location":"bombay","cuisine":"north indian"}
-    - slot{"location":"mumbai"}
-    - action_validate_location
-    - slot{"location_ok":true}
-    - slot{"cuisine":"north indian"}
-    - utter_ask_budget
+  - slot{"location":"koorg"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location":"bombay"}
+  - slot{"location":"mumbai"}
+  - action_validate_location
+  - slot{"location_ok":true}
+  - slot{"cuisine":"Italian"}
+  - utter_ask_budget
 * restaurant_search{"budgetmin":"0", "budgetmax":"300"}
-    - slot{"budgetmax":300}
-    - slot{"budgetmin":0}
-    - action_search_restaurants
-    - utter_ask_email_id
+  - slot{"budgetmax":300}
+  - slot{"budgetmin":0}
+  - action_search_restaurants
+  - utter_ask_email_id
   * restaurant_search{"email_id":"aamir1234@yahoo.com"}
-    - action_send_email
-    - utter_goodbye
+  - action_send_email
+  - utter_goodbye
+  - action_restart
 
 
 ## fail_story_1
@@ -387,6 +410,7 @@
 * restaurant_search{"email_id":"srk@yahoo.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
 ## fail_story_2
 * greet
@@ -420,6 +444,7 @@
 * restaurant_search{"email_id":"srk@outlook.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
 ## fail_story_3
 * greet
@@ -463,6 +488,7 @@
 * restaurant_search{"email_id":"srk@outlook.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
 ## fail_story_4
 * greet
@@ -511,6 +537,7 @@
 * restaurant_search{"email_id":"sid@outlook.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
 ## fail_story_5
 * greet
@@ -559,6 +586,7 @@
 * restaurant_search{"email_id":"sid@gmail.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
   ## fail_story_6
 * greet
@@ -588,6 +616,7 @@
 * restaurant_search{"email_id":"srk@yahoo.com"}
   - action_send_email
   - utter_goodbye
+  - action_restart
 
   ## fail_story_7
 * greet
@@ -597,13 +626,13 @@
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
-* restaurant_search{"location": "durgapur"}
-  - slot{"location": "durgapur"}
+* restaurant_search{"location": "jharia"}
+  - slot{"location": "jharia"}
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
-* restaurant_search{"location": "bokaro"}
-  - slot{"location": "bokaro"}
+* restaurant_search{"location": "hampi"}
+  - slot{"location": "hampi"}
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
@@ -612,7 +641,7 @@
   - action_validate_location
   - slot{"location_ok": true}
   - slot{"location": "Lucknow"}
-  - slot{"cuisine":"nouth indian"}
+  - slot{"cuisine":"north indian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
   - slot{"budgetmin":"700"}
@@ -622,4 +651,4 @@
 * restaurant_search{"email_id":"jhantu@outlook.com"}
   - action_send_email
   - utter_goodbye
-  
+  - action_restart
