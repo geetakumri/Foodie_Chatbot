@@ -35,7 +35,6 @@ class ActionSearchRestaurants(Action):
         return 'action_search_restaurants'
 
     def run(self, dispatcher, tracker, domain):
-        print("inside action search restaurant")
         config={ "user_key":"f4924dc9ad672ee8c4f8c84743301af5"}
         zomato = zomatopy.initialize_app(config)
 
@@ -44,13 +43,13 @@ class ActionSearchRestaurants(Action):
         budget_min = tracker.get_slot('budgetmin')
         budget_max = tracker.get_slot('budgetmax')
 
-        print('location; {}, cuisine: {}, budgetmin: {}, budgetmax: {}'.format(loc, cuisine, budget_min, budget_max))
+        #print('location; {}, cuisine: {}, budgetmin: {}, budgetmax: {}'.format(loc, cuisine, budget_min, budget_max))
 
         if not loc:
             return [SlotSet('location', loc), SlotSet('restaurant_exist', False)]
 
         results, lat, lon = self.get_location_suggestions(loc, zomato)
-        print('result {}'.format(results))
+
 
         if results == 0:
             restaurant_exist = False
@@ -75,14 +74,17 @@ class ActionSearchRestaurants(Action):
             else:
                 top10_restaurant = budget_restaurant_sorted[:10]
 
-            for index, restaurant in enumerate(top10_restaurant[:5]):
-                response = response +str(index+1)+ ". "+ restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] +" And the average price for two people here is: "+str(restaurant['restaurant']['average_cost_for_two'])+ " Rs. with rating " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
+            for restaurant in top10_restaurant[:5]:
+                response = '{}\nRestaurant Name: {} \nAddress: {} \nThe average price for two people: Rs. {} \nRating: {}\n\n'.format(response, restaurant['restaurant']['name'], restaurant['restaurant']['location']['address'], restaurant['restaurant']['average_cost_for_two'], restaurant['restaurant']['user_rating']['aggregate_rating'])
+                #response = response + "\nRestaurant Name: " + restaurant['restaurant']['name'] + "\nAddress:  " + restaurant['restaurant']['location']['address'] + "\nRating: " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
+                #response = response +str(index+1)+ ". "+ restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] +" And the average price for two people here is: "+str(restaurant['restaurant']['average_cost_for_two'])+ " Rs. with rating " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
             
-            for index, restaurant in enumerate(top10_restaurant):
-                response_top10 = response_top10 +str(index+1)+ ". "+ restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] +" And the average price for two people here is: "+str(restaurant['restaurant']['average_cost_for_two'])+ " Rs. with rating " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
+            for restaurant in top10_restaurant:
+                #response_top10 = response_top10 +str(index+1)+ ". "+ restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] +" And the average price for two people here is: "+str(restaurant['restaurant']['average_cost_for_two'])+ " Rs. with rating " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
+                response_top10 = '{}\nRestaurant Name: {} \nAddress: {} \nThe average price for two people: Rs. {} \nRating: {}\n\n'.format(response_top10, restaurant['restaurant']['name'], restaurant['restaurant']['location']['address'], restaurant['restaurant']['average_cost_for_two'], restaurant['restaurant']['user_rating']['aggregate_rating'])
 
 
-            dispatcher.utter_message("Showing you top rated restaurants:\n{}\n\n\n".format(response))
+            dispatcher.utter_message("Showing you top rated restaurants in your desired location :\n\n{}\n\n\n".format(response))
         return [SlotSet('location', loc), SlotSet('restaurant_exist', restaurant_exist)]
     
 
@@ -131,7 +133,6 @@ class ActionValidateCityName(Action):
 
     def run(self, dispatcher, tracker, domain):
         loc = tracker.get_slot('location')
-        print('location name: {}'.format(loc))
 
         if not loc:
             dispatcher.utter_message("Please enter a location")
@@ -174,7 +175,7 @@ class SendEmailAction(Action):
 
         self.send_email(to_email_id, email_sub, email_body)
 
-        dispatcher.utter_message('Restaurants list has been sent to your email id. Enjoy!!')
+        dispatcher.utter_message('Restaurants list has been sent to your email id. Bon Appétit!!')
 
     def send_email(self, to_email_id, email_sub, email_body):
         sender_email_add = 'chatbotfoodie1@gmail.com'
@@ -207,7 +208,7 @@ class ActionValidateCuisineName(Action):
 
     def run(self, dispatcher, tracker, domain):
         cuisine = tracker.get_slot('cuisine')
-        print('cuisine name: {}'.format(cuisine))
+        #print('cuisine name: {}'.format(cuisine))
         
         
         if not cuisine:
