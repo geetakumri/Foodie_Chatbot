@@ -32,6 +32,8 @@ slots:
     type: text
   location_ok:
     type: bool
+  cuisine_ok:
+    type: bool
     initial_value: true
   restaurant_exist:
     type: bool
@@ -83,6 +85,7 @@ actions:
 - utter_ask_cuisine
 - utter_ask_budget
 - action_validate_location
+- action_validate_cuisine
 - action_search_restaurants
 - action_send_email
 - utter_default

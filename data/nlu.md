@@ -731,8 +731,10 @@
 - Amerikan
 
 
-## synonym:Thai
-- thai 
+## synonym:South Indian
+- south indian
+- South India
+- south india
 
 
 ## synonym:North Indian

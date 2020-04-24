@@ -28,7 +28,6 @@ import requests
 # Import smtplib for the email sending function
 import smtplib
 from concurrent.futures import ThreadPoolExecutor
-response = ''
 response_top10 =''
 
 class ActionSearchRestaurants(Action):
@@ -63,9 +62,10 @@ class ActionSearchRestaurants(Action):
 
             budget_restaurant_sorted = sorted(budget_restaurant, key = lambda x: x['restaurant']['user_rating']['aggregate_rating'], reverse = True)
 
-            global response,response_top10
-            if response:
-                response = ''
+            response = ''
+            global response_top10
+            if response_top10:
+                response_top10 = ''
             
             restaurant_exist = False
 
@@ -73,17 +73,16 @@ class ActionSearchRestaurants(Action):
                 dispatcher.utter_message("no results")
                 return
             else:
-                top5_restaurant = budget_restaurant_sorted[:5]
                 top10_restaurant = budget_restaurant_sorted[:10]
 
-            for restaurant in top5_restaurant:
-                response = response + restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] +" And the average price for two people here is: "+str(restaurant['restaurant']['average_cost_for_two'])+ " Rs. with rating " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
+            for index, restaurant in enumerate(top10_restaurant[:5]):
+                response = response +str(index+1)+ ". "+ restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] +" And the average price for two people here is: "+str(restaurant['restaurant']['average_cost_for_two'])+ " Rs. with rating " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
+            
+            for index, restaurant in enumerate(top10_restaurant):
+                response_top10 = response_top10 +str(index+1)+ ". "+ restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] +" And the average price for two people here is: "+str(restaurant['restaurant']['average_cost_for_two'])+ " Rs. with rating " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
 
-            for restaurant in top10_restaurant:
-                response_top10 = response_top10 + restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] +" And the average price for two people here is: "+str(restaurant['restaurant']['average_cost_for_two'])+ " Rs. with rating " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
 
-
-            dispatcher.utter_message("Showing you top rated restaurants:\n{}\n".format(response))
+            dispatcher.utter_message("Showing you top rated restaurants:\n{}\n\n\n".format(response))
         return [SlotSet('location', loc), SlotSet('restaurant_exist', restaurant_exist)]
     
 
@@ -199,6 +198,25 @@ class SendEmailAction(Action):
 
 
 
+class ActionValidateCuisineName(Action):
+    """This action is to validate user provided cuisine name"""
+
+    def name(self):
+        # identifier of the action
+        return 'action_validate_cuisine'
+
+    def run(self, dispatcher, tracker, domain):
+        cuisine = tracker.get_slot('cuisine')
+        print('cuisine name: {}'.format(cuisine))
         
+        
+        if not cuisine:
+            dispatcher.utter_message("Please enter a cuisine")
+            return [SlotSet('cuisine_ok', False)]
 
+        allowed_cuisine =['American','Chinese','Italian','Mexican','North Indian','South Indian']
 
+        if not (cuisine.title() in allowed_cuisine):
+            dispatcher.utter_message("sorry, we don't serve this cuisine")
+            return [SlotSet('cuisine_ok', False)]
+        return [SlotSet('cuisine_ok', True), SlotSet('cuisine', cuisine)]
