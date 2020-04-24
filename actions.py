@@ -29,6 +29,7 @@ import requests
 import smtplib
 from concurrent.futures import ThreadPoolExecutor
 response = ''
+response_top10 =''
 
 class ActionSearchRestaurants(Action):
     def name(self):
@@ -62,7 +63,7 @@ class ActionSearchRestaurants(Action):
 
             budget_restaurant_sorted = sorted(budget_restaurant, key = lambda x: x['restaurant']['user_rating']['aggregate_rating'], reverse = True)
 
-            global response
+            global response,response_top10
             if response:
                 response = ''
             
@@ -73,9 +74,14 @@ class ActionSearchRestaurants(Action):
                 return
             else:
                 top5_restaurant = budget_restaurant_sorted[:5]
+                top10_restaurant = budget_restaurant_sorted[:10]
 
             for restaurant in top5_restaurant:
                 response = response + restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] +" And the average price for two people here is: "+str(restaurant['restaurant']['average_cost_for_two'])+ " Rs. with rating " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
+
+            for restaurant in top10_restaurant:
+                response_top10 = response_top10 + restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] +" And the average price for two people here is: "+str(restaurant['restaurant']['average_cost_for_two'])+ " Rs. with rating " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
+
 
             dispatcher.utter_message("Showing you top rated restaurants:\n{}\n".format(response))
         return [SlotSet('location', loc), SlotSet('restaurant_exist', restaurant_exist)]
@@ -163,9 +169,9 @@ class SendEmailAction(Action):
         location = tracker.get_slot('location')
         cuisine = tracker.get_slot('cuisine')
 
-        global response
+        global response_top10
         email_sub = self.get_email_subject(location, cuisine)
-        email_body = 'Hi User,\nPlease find top {} restaurants in {}.\n\n{}Sincerely,\nFoodie Chatbot'.format(cuisine, location, response)
+        email_body = 'Hi User,\nPlease find top {} restaurants in {}.\n\n{}Sincerely,\nFoodie Chatbot'.format(cuisine, location, response_top10)
 
         self.send_email(to_email_id, email_sub, email_body)
 
