@@ -74,6 +74,7 @@
 - I’m hungry. Looking out for some good [chinese](cuisine) restaurants in [chandigarh](location)
 - Can you suggest some good restaurants in [Rishikesh](location)
 - Can you suggest some good restaurants in [kolkata](location)
+- suggest some good restaurants in [kolkata](location)
 - I am looking for some good restaurants in [Delhi](location).
 - I am looking for some place to eat in [Bangalore](location)
 - show me [chinese](cuisine) restaurants
@@ -91,7 +92,10 @@
 - want to know some good [Chinese](cuisine:chinese) restaurants
 - want to eat in [chinese](cuisine) restaurants
 - Oh, sorry, in [Italy](location)
+- suggest me some good restaurants in [pune](location)
 - in [delhi](location)
+- suggest me good restaurants in [mumbai](location)
+- suggest some good restaurants in [delhi](location)
 - I am looking for some restaurants in [Mumbai](location)
 - I am looking for [mexican indian fusion](cuisine)
 - provide me restaurants in [central](location) [indian](cuisine) restaurant
@@ -99,7 +103,7 @@
 - Please find me a restaurantin [bangalore](location)
 - show me restaurants
 - please find me [chinese](cuisine) restaurant in [delhi](location)
-- can you find me a [chinese](cuisine) restaurant
+- can you find me a [north india](cuisine:North Indian) restaurant
 - please find me a restaurant in [ahmedabad](location)
 - please show me a few [italian](cuisine) restaurants in [bangalore](location)
 - any [Italian](cuisine) place in [Lucknow](location) for range [500](budgetmin) - [700](budgetmax)
@@ -110,7 +114,33 @@
 - between [300](budgetmin) and [400](budgetmax)
 - budget is between [600](budgetmin) - [700](budgetmax)
 - can you please find me a [italian](cuisine) restaurant in [mumbai](location)
+- can you please find me a [american](cuisine) restaurant in [delhi](location)
+- can you please find me a [mexican](cuisine) restaurant in [kolkata](location)
+- find me a [south india](cuisine:South Indian) restaurant in [pune](location)
+- find me a [north indian](cuisine) restaurant in [agra](location)
+- suggest me a [italian](cuisine) restaurant in [warangal](location)
+- tell me a [american](cuisine) restaurant in [Meerut](location)
 - i want [Chinese](cuisine:chinese) food
+- [jhantu@outlook.com](email_id)
+- [srk@outlook.com](email_id)
+- [aamir@outlook.com](email_id)
+- [amit@outlook.com](email_id)
+- [asha@outlook.com](email_id)
+- my email id is [jhantu@gmail.com](email_id)
+- my email id is [srk@gmail.com](email_id)
+- my email id is [aamir@gmail.com](email_id)
+- my email id is [amit@gmail.com](email_id)
+- my email id is [asha@gmail.com](email_id)
+- my email id is [jhantu@yahoo.com](email_id)
+- my email is [srk@yahoo.com](email_id)
+- my email is [aamir@yahoo.com](email_id)
+- my email is [amit@yahoo.com](email_id)
+- my email is [asha@yahoo.com](email_id)
+- my email is [jhantu@in.com](email_id)
+- my email is [srk@in.com](email_id)
+- [aamir@in.com](email_id)
+- [amit@in.com](email_id)
+- [asha@in.com](email_id)
 - [Agra](location)
 - [Ahmedabad](location)
 - [Ajmer](location)
@@ -215,6 +245,12 @@
 - [Vijayawada](location)
 - [Visakhapatnam](location)
 - [Warangal](location)
+- [chinese](cuisine)
+- [american](cuisine)
+- [south indian](cuisine)
+- [north indian](cuisine)
+- [italian](cuisine)
+- [mexican](cuisine)
 
 ## synonym:4
 - four
@@ -695,8 +731,10 @@
 - Amerikan
 
 
-## synonym:Thai
-- thai 
+## synonym:South Indian
+- south indian
+- South India
+- south india
 
 
 ## synonym:North Indian

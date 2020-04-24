@@ -28,7 +28,7 @@ import requests
 # Import smtplib for the email sending function
 import smtplib
 from concurrent.futures import ThreadPoolExecutor
-d_email_rest = []
+response_top10 =''
 
 class ActionSearchRestaurants(Action):
     def name(self):
@@ -50,6 +50,7 @@ class ActionSearchRestaurants(Action):
             return [SlotSet('location', loc), SlotSet('restaurant_exist', False)]
 
         results, lat, lon = self.get_location_suggestions(loc, zomato)
+        print('result {}'.format(results))
 
         if results == 0:
             restaurant_exist = False
@@ -61,18 +62,27 @@ class ActionSearchRestaurants(Action):
 
             budget_restaurant_sorted = sorted(budget_restaurant, key = lambda x: x['restaurant']['user_rating']['aggregate_rating'], reverse = True)
 
-            response = ""
+            response = ''
+            global response_top10
+            if response_top10:
+                response_top10 = ''
+            
             restaurant_exist = False
 
             if len(budget_restaurant_sorted) == 0:
                 dispatcher.utter_message("no results")
+                return
             else:
-                top5_restaurant = budget_restaurant_sorted[:5]
+                top10_restaurant = budget_restaurant_sorted[:10]
 
-            for restaurant in top5_restaurant:
-                response = response + "Found " + restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] + " has been rated " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
+            for index, restaurant in enumerate(top10_restaurant[:5]):
+                response = response +str(index+1)+ ". "+ restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] +" And the average price for two people here is: "+str(restaurant['restaurant']['average_cost_for_two'])+ " Rs. with rating " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
+            
+            for index, restaurant in enumerate(top10_restaurant):
+                response_top10 = response_top10 +str(index+1)+ ". "+ restaurant['restaurant']['name'] + " in " + restaurant['restaurant']['location']['address'] +" And the average price for two people here is: "+str(restaurant['restaurant']['average_cost_for_two'])+ " Rs. with rating " + restaurant['restaurant']['user_rating']['aggregate_rating'] + "\n" + "\n"
 
-            dispatcher.utter_message("-----\n" + response)
+
+            dispatcher.utter_message("Showing you top rated restaurants:\n{}\n\n\n".format(response))
         return [SlotSet('location', loc), SlotSet('restaurant_exist', restaurant_exist)]
     
 
@@ -123,23 +133,90 @@ class ActionValidateCityName(Action):
         loc = tracker.get_slot('location')
         print('location name: {}'.format(loc))
 
-        allowed_cities = ['Agra', 'Ahmedabad', 'Ajmer', 'Aligarh', 'Allahabad', 'Amravati', 'Amritsar',
-            'Asansol', 'Aurangabad', 'Bangalore', 'Bareilly', 'Belgaum', 'Bhavnagar', 'Bhilai', 'Bhiwandi', 'Bhopal', 
-            'Bhubaneswar', 'Bikaner', 'Bokaro Steel City', 'Chandigarh', 'Chennai', 'Coimbatore', 'Cuttack', 'Dehradun', 
-            'Delhi', 'Dhanbad', 'Durgapur', 'Erode', 'Faridabad', 'Firozabad', 'Ghaziabad', 'Goa', 'Gorakhpur', 'Gulbarga', 
-            'Guntur', 'Gurgaon', 'Guwahati', 'Gwalior', 'Hubli-Dharwad', 'Hyderabad', 'Indore', 'Jabalpur', 'Jaipur', 'Jalandhar', 
-            'Jammu', 'Jamnagar', 'Jamshedpur', 'Jhansi', 'Jodhpur', 'Kakinada', 'Kannur', 'Kanpur', 'Kochi', 'Kolhapur', 
-            'Kolkata', 'Kollam', 'Kota', 'Kottayam', 'Kozhikode', 'Kurnool', 'Lucknow', 'Ludhiana', 'Madurai', 'Malappuram', 
-            'Mangalore', 'Mathura', 'Meerut', 'Moradabad', 'Mumbai', 'Mysore', 'Nagpur', 'Nanded', 'Nashik', 'Nellore', 'Noida', 
-            'Palakkad', 'Patna', 'Pondicherry', 'Pune', 'Raipur', 'Rajahmundry', 'Rajkot', 'Ranchi', 'Rourkela', 'Salem', 'Sangli', 
-            'Siliguri', 'Solapur', 'Srinagar', 'Sultanpur', 'Surat', 'Thiruvananthapuram', 'Thrissur', 'Tiruchirappalli', 
-            'Tiruppur', 'Ujjain', 'Vadodara', 'Varanasi', 'Vasai-Virar City', 'Vellore', 'Vijayapura', 'Vijayawada', 
-            'Visakhapatnam', 'Warangal']
+        if not loc:
+            dispatcher.utter_message("Please enter a location")
+            return [SlotSet('location_ok', False)]
+
+        allowed_cities = ['Agra', 'Ahmedabad', 'Ajmer', 'Aligarh', 'Amravati', 'Amritsar', 'Asansol', 'Aurangabad', 
+        'Bangalore', 'Bareilly', 'Belgaum', 'Bhavnagar', 'Bhilai', 'Bhiwandi', 'Bhopal', 'Bhubaneswar', 'Bijapur', 'Bikaner', 
+        'Bilaspur', 'Bokaro Steel City', 'Chandigarh', 'Chennai', 'Coimbatore', 'Cuttack', 'Dehradun', 'Delhi', 'Dhanbad', 
+        'Durgapur', 'Erode', 'Faridabad', 'Firozabad', 'Ghaziabad', 'Goa', 'Gorakhpur', 'Gulbarga', 'Guntur', 'Gurgaon', 
+        'Guwahati', 'Gwalior', 'Hamirpur', 'Hubli-Dharwad', 'Hyderabad', 'Indore', 'Jabalpur', 'Jaipur', 'Jalandhar', 'Jammu', 
+        'Jamnagar', 'Jamshedpur', 'Jhansi', 'Jodhpur', 'Kakinada', 'Kannur', 'Kanpur', 'Kochi', 'Kolhapur', 'Kolkata', 
+        'Kollam', 'Kozhikode', 'Kurnool', 'Lucknow', 'Ludhiana', 'Madurai', 'Malappuram', 'Mangalore', 'Mathura', 'Meerut', 
+        'Moradabad', 'Mumbai', 'Mysore', 'Nagpur', 'Nanded', 'Nashik', 'Nellore', 'Noida', 'Patna', 'Pondicherry', 'Prayagraj', 
+        'Pune', 'Purulia', 'Raipur', 'Rajahmundry', 'Rajkot', 'Ranchi', 'Rourkela', 'Salem', 'Sangli', 'Shimla', 'Siliguri',
+        'Solapur', 'Srinagar', 'Surat', 'Thiruvananthapuram', 'Thrissur', 'Tiruchirappalli', 'Tiruppur', 'Ujjain', 'Vadodara',
+        'Varanasi', 'Vasai-Virar City', 'Vellore', 'Vijayawada', 'Visakhapatnam', 'Warangal']
 
         if not (loc.title() in allowed_cities):
             dispatcher.utter_message("sorry, we don't operate in this city")
             return [SlotSet('location_ok', False)]
-        return [SlotSet('location_ok', True)]
+        return [SlotSet('location_ok', True), SlotSet('location', loc)]
+
+class SendEmailAction(Action):
+    def name(self):
+        return 'action_send_email'
+    
+    def run(self, dispatcher, tracker, domain):
+        to_email_id = tracker.get_slot("email_id")
+
+        if not to_email_id:
+            #dispatcher.utter_message('Good Bye')
+            return
+
+        location = tracker.get_slot('location')
+        cuisine = tracker.get_slot('cuisine')
+
+        global response_top10
+        email_sub = self.get_email_subject(location, cuisine)
+        email_body = 'Hi User,\nPlease find top {} restaurants in {}.\n\n{}Sincerely,\nFoodie Chatbot'.format(cuisine, location, response_top10)
+
+        self.send_email(to_email_id, email_sub, email_body)
+
+        dispatcher.utter_message('Restaurants list has been sent to your email id. Enjoy!!')
+
+    def send_email(self, to_email_id, email_sub, email_body):
+        sender_email_add = 'chatbotfoodie1@gmail.com'
+        passowrd = 'V3BpvmqeaEgy8RC'
+
+        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server.starttls()
+        server.login(sender_email_add, passowrd)
+
+        email = EmailMessage()
+        email['Subject'] = email_sub
+        email['To'] = to_email_id
+        email['From'] = 'Foodie <{}>'.format(sender_email_add)
+        email.set_content(email_body)
+
+        server.send_message(email)
+        server.quit()
+    
+    def get_email_subject(self, location, cuisine):
+        return 'Top {} restaurants in {}'.format(cuisine.title(), location.title())
+
+
+
+class ActionValidateCuisineName(Action):
+    """This action is to validate user provided cuisine name"""
+
+    def name(self):
+        # identifier of the action
+        return 'action_validate_cuisine'
+
+    def run(self, dispatcher, tracker, domain):
+        cuisine = tracker.get_slot('cuisine')
+        print('cuisine name: {}'.format(cuisine))
         
+        
+        if not cuisine:
+            dispatcher.utter_message("Please enter a cuisine")
+            return [SlotSet('cuisine_ok', False)]
 
+        allowed_cuisine =['American','Chinese','Italian','Mexican','North Indian','South Indian']
 
+        if not (cuisine.title() in allowed_cuisine):
+            dispatcher.utter_message("sorry, we don't serve this cuisine")
+            return [SlotSet('cuisine_ok', False)]
+        return [SlotSet('cuisine_ok', True), SlotSet('cuisine', cuisine)]
