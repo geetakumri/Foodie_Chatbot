@@ -20,9 +20,8 @@ entities:
 - email_id
 - location
 intents:
-- restaurant_search
 - greet
-- stop
+- restaurant_search
 - goodbye
 - affirm
 - bot_challenge

@@ -22,6 +22,7 @@
 - Hola hola hola Hola
 - hola Hi
 - Hola
+- show me
 
 ## intent:goodbye
 - bye
@@ -70,6 +71,8 @@
 - I am searching for a dinner spot
 - i want to eat [chinese](cuisine) food
 - i want to eat [chinese](cuisine) food in [bangalore](location)
+- i want to know good [thai](cuisine) restaurants in [hampi](location)
+- i want to know good [mexican](cuisine) restaurants in [dhanbad](location)
 - I’m hungry. Looking out for some good restaurants
 - I’m hungry. Looking out for some good [chinese](cuisine) restaurants in [chandigarh](location)
 - Can you suggest some good restaurants in [Rishikesh](location)
@@ -102,6 +105,7 @@
 - please help me to find restaurants in [pune](location)
 - Please find me a restaurantin [bangalore](location)
 - show me restaurants
+- i want to know good [japanese](cuisine) restaurants in [kolkata](location)
 - please find me [chinese](cuisine) restaurant in [delhi](location)
 - can you find me a [north india](cuisine:North Indian) restaurant
 - please find me a restaurant in [ahmedabad](location)
@@ -113,6 +117,9 @@
 - more than [500](budgetmax)
 - between [300](budgetmin) and [400](budgetmax)
 - budget is between [600](budgetmin) - [700](budgetmax)
+- > [700](budgetmin)
+- < [700](budgetmax)
+- < [500](budgetmax)
 - can you please find me a [italian](cuisine) restaurant in [mumbai](location)
 - can you please find me a [american](cuisine) restaurant in [delhi](location)
 - can you please find me a [mexican](cuisine) restaurant in [kolkata](location)
@@ -251,58 +258,59 @@
 - [north indian](cuisine)
 - [italian](cuisine)
 - [mexican](cuisine)
+- i want to know some good [japanese](cuisine) restaurants in [kolkata](location)
+- [north indian](cuisine:North Indian)
+- [0](budgetmin) - [500](budgetmax)
+- [0](budgetmin) - [300](budgetmax)
+- [foodiechatbot1@gmail.com](email_id)
+- want to know some good [chinese](cuisine) restauratns
+- [dilli](location:Delhi)
+- [0](budgetmin)-[300](budgetmax)
+- [srk@gmail.com](email_id)
+- want to know [thai](cuisine) restaurants
+- [North Indian](cuisine)
+- [puna](location:Pune)
+- [salman@gmail.com](email_id)
+- i wasy to know good idly restaurants[](cuisine:idly)
+- [briyani](cuisine)
+- [thai](cuisine)
+- [hariyanvi](cuisine)
+- [American](cuisine)
+- [agra](location:Agra)
+- [rock@gmail.com](email_id)
+- want to know good restaurants in [mumbai](location:Mumbai)
+- [bihari](cuisine)
+- [South Indian](cuisine)
+- > [800](budgetmin)
+- suggest good [chinese](cuisine) restaurant
+- suggest [italian](cuisine) restaurant
+- suggest [mexican](cuisine) restaurants
+- show me good [japanese](cuisine) restaurants
+- [Italian](cuisine)
+- [panagarh](location)
+- [delhi](location:Delhi)
+- >[300](budgetmin)
+- [foodiechatbot1@gmail.com](email_id)
 
-## synonym:4
-- four
-
-## synonym:3
-- three
+## synonym: Bhopal
+- bhopal
 
 ## synonym:2
 - two
 
-## synonym:Ahmedabad
-- ahmedabad
+## synonym:3
+- three
 
-## synonym:Bangalore
-- Bengaluru
-- bengaluru
-- bangalore
-- bglr
-
-## synonym:Chennai
-- Madras 
-- chennai
-
-## synonym:Delhi
-- New Delhi
-- Delli
-- delhi
-- new delhi
-
-## synonym:Hyderabad
-- hyderabad
-- hyd
-- Hyd
-
-## synonym:Kolkata
-- Calcutta
-
-
-## synonym:Kolkata
-- Calcutta
-
-## synonym:Mumbai
-- Bombay
-- mumbai
-
-## synonym:Pune
-- Puna
+## synonym:4
+- four
 
 ## synonym:Agra
 - agra
 - Aagra
 - aagra
+
+## synonym:Ahmedabad
+- ahmedabad
 
 ## synonym:Ajmer
 - ajmer
@@ -313,6 +321,10 @@
 - aligarh
 - aligahr
 
+## synonym:American
+- american
+- amerikan
+- Amerikan
 
 ## synonym:Amravati
 - amravati
@@ -335,6 +347,12 @@
 - Aurangabaad
 - aurangaabad
 
+## synonym:Bangalore
+- Bengaluru
+- bengaluru
+- bangalore
+- bglr
+
 ## synonym:Bareilly
 - barailly
 - bareilly
@@ -348,19 +366,24 @@
 ## synonym:Bhavnagar
 - bhavnagar
 - bhavngr
-- bhavngr
+
+## synonym:Bhilai
+- bhilai
+- Bhilai Nagar
+- bhilai nagar
 
 ## synonym:Bhiwandi
 - bhiwandi
 - bhiwandhi
 
-## synonym: Bhopal
-- bhopal
-
 ## synonym:Bhubaneswar
 - bhubaneshwar
 - bhubhaneswar
-- bhubaneshwar
+
+## synonym:Bijapur
+- bijapur
+- Vijayapura
+- vijayapura
 
 ## synonym:Bikaner
 - bikaner
@@ -381,6 +404,10 @@
 - chandigahr
 - Chandigarh
 
+## synonym:Chennai
+- Madras
+- chennai
+
 ## synonym:Coimbatore
 - coimbatore
 - Kovai
@@ -399,14 +426,15 @@
 - dehradoon
 - dera doon
 
+## synonym:Delhi
+- New Delhi
+- dilli
+- Delli
+- delhi
+- new delhi
+
 ## synonym:Dhanbad
 - dhanbad
-
-## synonym:Bhilai
-- bhilai
-- Bhilai Nagar
-- bhilai nagar
-
 
 ## synonym:Durgapur
 - durgapur
@@ -427,6 +455,9 @@
 - ghaziabad
 - gaziabad
 
+## synonym:Goa
+- goa
+
 ## synonym:Gorakhpur
 - gorakhpur
 - gorakpur
@@ -439,9 +470,6 @@
 ## synonym:Guntur
 - guntur
 
-## synonym:Gwalior
-- gwalior
-
 ## synonym:Gurgaon
 - gurgoan
 - Gurugram
@@ -450,6 +478,9 @@
 
 ## synonym:Guwahati
 - guwahati
+
+## synonym:Gwalior
+- gwalior
 
 ## synonym:Hamirpur
 - hamirpur
@@ -461,8 +492,18 @@
 - Dharwad
 - dharwad
 
+## synonym:Hyderabad
+- hyderabad
+- hyd
+- Hyd
+
 ## synonym:Indore
 - indore
+
+## synonym:Italian
+- italian
+- Italien
+- italien
 
 ## synonym:Jabalpur
 - jabalpur
@@ -513,6 +554,9 @@
 - kolhapur
 - kohlapur
 
+## synonym:Kolkata
+- Calcutta
+
 ## synonym:Kollam
 - kollam
 - Quilon
@@ -529,11 +573,11 @@
 - kurnool
 - karnool
 
-## synonym:Ludhiana
-- ludhiana
-
 ## synonym:Lucknow
 - lucknow
+
+## synonym:Ludhiana
+- ludhiana
 
 ## synonym:Madurai
 - madurai
@@ -541,23 +585,33 @@
 ## synonym:Malappuram
 - malappuram
 
-## synonym:Mathura
-- mathura
-
-## synonym:Goa
--goa
-
 ## synonym:Mangalore
 - mangalore
 - Mangaluru
 - mangaluru
 
+## synonym:Mathura
+- mathura
+
 ## synonym:Meerut
 - meerut
 - merath
 
+## synonym:Mexican
+- mexican
+- maxican
+- Maxican
+- Maxicon
+- maxicon
+- maxicane
+- Maxicane
+
 ## synonym:Moradabad
 - moradabad
+
+## synonym:Mumbai
+- mumbai
+- Bombay
 
 ## synonym:Mysore
 - mysore
@@ -580,6 +634,13 @@
 - noida
 - New Okhla Industrial Development Authority
 
+## synonym:North Indian
+- north india
+- north indian
+- north Indian
+- North indian
+- North India
+
 ## synonym:Patna
 - patna
 - Pataliputra
@@ -590,9 +651,6 @@
 - Puducherry
 - puducherry
 
-## synonym:Purulia
-- purulia
-
 ## synonym:Prayagraj
 - prayagraj
 - Allahabad
@@ -602,16 +660,23 @@
 - Prayag
 - prayag
 
+## synonym:Pune
+- puna
+- Puna
+
+## synonym:Purulia
+- purulia
+
 ## synonym:Raipur
 - raipur
-
-## synonym:Rajkot
-- rajkot
 
 ## synonym:Rajahmundry
 - rajahmundr
 - Rajahmundry City
 - Rajamahendravaram
+
+## synonym:Rajkot
+- rajkot
 
 ## synonym:Ranchi
 - ranchi
@@ -637,6 +702,11 @@
 
 ## synonym:Solapur
 - solapur
+
+## synonym:South Indian
+- south india
+- south indian
+- South India
 
 ## synonym:Srinagar
 - srinagar
@@ -671,11 +741,6 @@
 ## synonym:Ujjain
 - ujjain
 
-## synonym:Bijapur
-- bijapur
-- Vijayapura
-- vijayapura
-
 ## synonym:Vadodara
 - vadodara
 
@@ -689,15 +754,15 @@
 - vasai-virar city
 - vasai virar city
 
+## synonym:Vellore
+- vellore
+
 ## synonym:Vijayawada
 - vijayawada
 
 ## synonym:Visakhapatnam
 - visakhapatnam
 - Waltair
-
-## synonym:Vellore
-- vellore
 
 ## synonym:Warangal
 - warangal
@@ -708,41 +773,6 @@
 - Chines
 - chinise
 - Chinise
-
-## synonym:Mexican
-- mexican
-- maxican
-- Maxican
-- Maxicon
-- maxicon
-- maxicane
-- Maxicane
-
-## synonym:Italian
-- italian
-- Italien
-- italien
-
-
-
-## synonym:American
-- american
-- amerikan
-- Amerikan
-
-
-## synonym:South Indian
-- south indian
-- South India
-- south india
-
-
-## synonym:North Indian
-- north Indian
-- north indian
-- North indian
-- north india
-- North India
 
 ## synonym:mid
 - moderate

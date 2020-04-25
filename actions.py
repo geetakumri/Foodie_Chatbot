@@ -43,7 +43,7 @@ class ActionSearchRestaurants(Action):
         budget_min = tracker.get_slot('budgetmin')
         budget_max = tracker.get_slot('budgetmax')
 
-        #print('location; {}, cuisine: {}, budgetmin: {}, budgetmax: {}'.format(loc, cuisine, budget_min, budget_max))
+       # print('location; {}, cuisine: {}, budgetmin: {}, budgetmax: {}'.format(loc, cuisine, budget_min, budget_max))
 
         if not loc:
             return [SlotSet('location', loc), SlotSet('restaurant_exist', False)]
@@ -73,6 +73,7 @@ class ActionSearchRestaurants(Action):
                 return
             else:
                 top10_restaurant = budget_restaurant_sorted[:10]
+                restaurant_exist = True
 
             for restaurant in top10_restaurant[:5]:
                 response = '{}\nRestaurant Name: {} \nAddress: {} \nThe average price for two people: Rs. {} \nRating: {}\n\n'.format(response, restaurant['restaurant']['name'], restaurant['restaurant']['location']['address'], restaurant['restaurant']['average_cost_for_two'], restaurant['restaurant']['user_rating']['aggregate_rating'])
@@ -151,11 +152,12 @@ class ActionValidateCityName(Action):
         'Varanasi', 'Vasai-Virar City', 'Vellore', 'Vijayawada', 'Visakhapatnam', 'Warangal']
 
         if not (loc.title() in allowed_cities):
+            #print('location check failed for {}'.format(loc))
             dispatcher.utter_message("sorry, we don't operate in this city")
             return [SlotSet('location_ok', False)]
         return [SlotSet('location_ok', True), SlotSet('location', loc)]
 
-class SendEmailAction(Action):
+class ActionSendEmail(Action):
     def name(self):
         return 'action_send_email'
     
@@ -212,6 +214,7 @@ class ActionValidateCuisineName(Action):
         
         
         if not cuisine:
+           # print('cuisine name: {}'.format(cuisine))
             dispatcher.utter_message("Please enter a cuisine")
             return [SlotSet('cuisine_ok', False)]
 
@@ -221,3 +224,26 @@ class ActionValidateCuisineName(Action):
             dispatcher.utter_message("sorry, we don't serve this cuisine")
             return [SlotSet('cuisine_ok', False)]
         return [SlotSet('cuisine_ok', True), SlotSet('cuisine', cuisine)]
+
+class ActionValidateBudget(Action):
+    def name(self):
+        return 'action_validate_budget'
+
+    def run(self, dispatcher, tracker, domain):
+        budgetmin = None
+        budgetmax = None
+
+        try:
+            budgetmin = int(tracker.get_slot('budgetmin'))
+            budgetmax = int(tracker.get_slot('budgetmax'))
+        except ValueError:
+            dispatcher.utter_message("Invalid budget range")
+            return [SlotSet('budgetmin', None), SlotSet('budgetmax', None), SlotSet('budget_ok', False)]
+
+        min_range = [0, 300, 700]
+        max_range = [300, 700]
+        if budgetmin in min_range and (budgetmax in max_range or budgetmax > 700):
+            return [SlotSet('budgetmin', budgetmin), SlotSet('budgetmax', budgetmax), SlotSet('budget_ok', True)]
+        else:
+            dispatcher.utter_message("Sorry!! price range not supported, please re-enter.")
+            return [SlotSet('budgetmin', 0), SlotSet('budgetmax', 10000), SlotSet('budget_ok', False)]

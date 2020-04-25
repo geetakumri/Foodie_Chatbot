@@ -18,6 +18,10 @@
 * restaurant_search{"budgetmin":"0", "budgetmax":"300"}
   - slot{"budgetmin":"0"}
   - slot{"budgetmax":"300"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin":"0"}
+  - slot{"budgetmax":"300"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"abc@gmail.com"}
@@ -46,9 +50,13 @@
   - slot{"cuisine_ok": true}
   - slot{"cuisine": "chinese"}
   - utter_ask_budget
-* restaurant_search{"budgetmin": "0", "budgetmax": "300"}
-  - slot{"budgetmax": "300"}
-  - slot{"budgetmin": "0"}
+* restaurant_search{"budgetmin": "300", "budgetmax": "700"}
+  - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin":"300"}
+  - slot{"budgetmax":"700"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"efg.cdf@gmail.com"}
@@ -74,8 +82,12 @@
   - slot{"cuisine": "american"}
   - utter_ask_budget
 * restaurant_search{"budgetmin": "300", "budgetmax": "700"}
-  - slot{"budgetmax": "700"}
   - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"efg.cdf@gmail.com"}
@@ -101,8 +113,12 @@
   - slot{"cuisine": "north indian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin": "700", "budgetmax": "1000"}
-  - slot{"budgetmax": "1000"}
   - slot{"budgetmin": "700"}
+  - slot{"budgetmax": "1000"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "700"}
+  - slot{"budgetmax": "1000"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"efg.cdf@yahoo.com"}
@@ -128,8 +144,12 @@
   - slot{"cuisine": "south indian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin": "700", "budgetmax": "1000"}
-  - slot{"budgetmax": "1000"}
   - slot{"budgetmin": "700"}
+  - slot{"budgetmax": "1000"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "700"}
+  - slot{"budgetmax": "1000"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"sam123@outlook.com"}
@@ -137,7 +157,7 @@
   - utter_goodbye
   - action_restart
 
-  ## story_6
+## story_6
 * greet
   - utter_greet
 * restaurant_search{"location":"bengaluru"}
@@ -160,6 +180,10 @@
 * restaurant_search{"budgetmin":"0", "budgetmax":"300"}
   - slot{"budgetmin":"0"}
   - slot{"budgetmax":"300"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "0"}
+  - slot{"budgetmax": "300"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"sam123@outlook.com"}
@@ -185,6 +209,10 @@
 * restaurant_search{"budgetmin":"300", "budgetmax":"700"}
   - slot{"budgetmin":"300"}
   - slot{"budgetmax":"700"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"asha@yahoo.com"}
@@ -210,6 +238,10 @@
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
   - slot{"budgetmin":"700"}
   - slot{"budgetmax":"1000"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "700"}
+  - slot{"budgetmax": "1000"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"shan@yahoo.com"}
@@ -217,7 +249,7 @@
   - utter_goodbye
   - action_restart
 
-  ## story_9
+## story_9
 * greet
   - utter_greet
 * restaurant_search{"location":"agra","cuisine":"italian"}
@@ -231,6 +263,10 @@
   - slot{"cuisine": "italian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"0", "budgetmax":"300"}
+  - slot{"budgetmin":"0"}
+  - slot{"budgetmax":"300"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
   - slot{"budgetmin":"0"}
   - slot{"budgetmax":"300"}
   - action_search_restaurants
@@ -256,6 +292,10 @@
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
   - slot{"budgetmin":"700"}
   - slot{"budgetmax":"1000"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin":"700"}
+  - slot{"budgetmax":"1000"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"aamir@outlook.com"}
@@ -279,6 +319,10 @@
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
   - slot{"budgetmin":"700"}
   - slot{"budgetmax":"1000"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "700"}
+  - slot{"budgetmax": "1000"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"amit@in.com"}
@@ -295,7 +339,7 @@
   - slot{"location_ok": true}
   - slot{"location": "delhi"}
   - action_validate_cuisine
-  - slot{"location_ok": false}
+  - slot{"cuisine_ok": false}
   - utter_ask_cuisine
 * restaurant_search{"cuisine":"south indian"}
   - slot{"cuisine":"south indian"}
@@ -303,9 +347,13 @@
   - slot{"cuisine_ok": true}
   - slot{"cuisine": "south indian"}
   - utter_ask_budget
-* restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
-  - slot{"budgetmin":"700"}
-  - slot{"budgetmax":"1000"}
+* restaurant_search{"budgetmin":"0", "budgetmax":"300"}
+  - slot{"budgetmin": "0"}
+  - slot{"budgetmax": "300"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "0"}
+  - slot{"budgetmax": "300"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"amit123@gmail.com"}
@@ -352,8 +400,12 @@
   - slot{"cuisine": "italian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
-  - slot{"budgetmax":1000}
-  - slot{"budgetmin":700}
+  - slot{"budgetmin": "700"}
+  - slot{"budgetmax": "1000"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "700"}
+  - slot{"budgetmax": "1000"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"salaman@gmail.com"}
@@ -394,14 +446,18 @@
   - action_validate_location
   - slot{"location_ok":true}
   - slot{"location":"kolkata"}
-  - slot{"cuisine":"south indian"}
+  - slot{"cuisine":"chinese"}
   - action_validate_cuisine
   - slot{"cuisine_ok":true}
-  - slot{"cuisine":"south indian"}
+  - slot{"cuisine":"chinese"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"300", "budgetmax":"700"}
-  - slot{"budgetmax":700}
-  - slot{"budgetmin":300}
+  - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
   - action_search_restaurants
   - utter_ask_email_id
   * restaurant_search{"email_id":"aamir@yahoo.com"}
@@ -427,8 +483,12 @@
   - slot{"cuisine":"Italian"}
   - utter_ask_budget
 * restaurant_search{"budgetmin":"0", "budgetmax":"300"}
-  - slot{"budgetmax":300}
-  - slot{"budgetmin":0}
+  - slot{"budgetmin": "0"}
+  - slot{"budgetmax": "300"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "0"}
+  - slot{"budgetmax": "300"}
   - action_search_restaurants
   - utter_ask_email_id
   * restaurant_search{"email_id":"aamir1234@yahoo.com"}
@@ -460,8 +520,12 @@
   - slot{"cuisine":"chinese"}
   - utter_ask_budget
 * restaurant_search{"budgetmin": "0", "budgetmax": "300"}
-  - slot{"budgetmax": "300"}
   - slot{"budgetmin": "0"}
+  - slot{"budgetmax": "300"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "0"}
+  - slot{"budgetmax": "300"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"srk@yahoo.com"}
@@ -497,8 +561,12 @@
   - slot{"cuisine": "chinese"}
   - utter_ask_budget
 * restaurant_search{"budgetmin": "300", "budgetmax": "700"}
-  - slot{"budgetmax": "700"}
   - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"srk@outlook.com"}
@@ -521,13 +589,13 @@
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
-* restaurant_search{"location": "shantiniketan"}
-  - slot{"location": "shantiniketan"}
+* restaurant_search{"location": "dhaka"}
+  - slot{"location": "dhaka"}
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
-* restaurant_search{"location": "tokyo"}
-  - slot{"location": "tokyo"}
+* restaurant_search{"location": "ghana"}
+  - slot{"location": "ghana"}
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
@@ -544,8 +612,12 @@
   - slot{"cuisine": "chinese"}
   - utter_ask_budget
 * restaurant_search{"budgetmin": "700", "budgetmax": "1000"}
-  - slot{"budgetmax": "1000"}
   - slot{"budgetmin": "700"}
+  - slot{"budgetmax": "1000"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "700"}
+  - slot{"budgetmax": "1000"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"srk@outlook.com"}
@@ -568,18 +640,18 @@
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
-* restaurant_search{"location": "tokyo"}
-  - slot{"location": "tokyo"}
+* restaurant_search{"location": "andaman"}
+  - slot{"location": "andaman"}
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
-* restaurant_search{"location": "shantiniketan"}
-  - slot{"location": "shantiniketan"}
+* restaurant_search{"location": "sundarban"}
+  - slot{"location": "sundarban"}
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
-* restaurant_search{"location": "tokyo"}
-  - slot{"location": "tokyo"}
+* restaurant_search{"location": "marathali"}
+  - slot{"location": "marathali"}
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
@@ -596,8 +668,12 @@
   - slot{"cuisine": "chinese"}
   - utter_ask_budget
 * restaurant_search{"budgetmin": "0", "budgetmax": "300"}
-  - slot{"budgetmax": "300"}
   - slot{"budgetmin": "0"}
+  - slot{"budgetmax": "300"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "0"}
+  - slot{"budgetmax": "300"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"sid@outlook.com"}
@@ -620,18 +696,18 @@
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
-* restaurant_search{"location": "tokyo"}
-  - slot{"location": "tokyo"}
+* restaurant_search{"location": "meghalaya"}
+  - slot{"location": "meghalaya"}
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
-* restaurant_search{"location": "shantiniketan"}
-  - slot{"location": "shantiniketan"}
+* restaurant_search{"location": "nawadih"}
+  - slot{"location": "nawadih"}
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
-* restaurant_search{"location": "tokyo"}
-  - slot{"location": "tokyo"}
+* restaurant_search{"location": "bhuli"}
+  - slot{"location": "bhuli"}
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
@@ -648,8 +724,12 @@
   - slot{"cuisine": "american"}
   - utter_ask_budget
 * restaurant_search{"budgetmin": "300", "budgetmax": "700"}
-  - slot{"budgetmax": "700"}
   - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"sid@gmail.com"}
@@ -657,7 +737,7 @@
   - utter_goodbye
   - action_restart
 
-  ## fail_story_6
+## fail_story_6
 * greet
   - utter_greet
 * restaurant_search{"location":"koorg","cuisine":"south indian"}
@@ -665,8 +745,8 @@
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
-* restaurant_search{"location": "tokyo"}
-  - slot{"location": "tokyo"}
+* restaurant_search{"location": "bhuli"}
+  - slot{"location": "bhuli"}
   - action_validate_location
   - slot{"location_ok": false}
   - utter_ask_location
@@ -688,6 +768,10 @@
 * restaurant_search{"budgetmin":"300", "budgetmax":"700"}
   - slot{"budgetmin":"300"}
   - slot{"budgetmax":"700"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"srk@yahoo.com"}
@@ -695,7 +779,7 @@
   - utter_goodbye
   - action_restart
 
-  ## fail_story_7
+## fail_story_7
 * greet
   - utter_greet
 * restaurant_search{"location":"asansol","cuisine":"north indian"}
@@ -726,9 +810,597 @@
 * restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
   - slot{"budgetmin":"700"}
   - slot{"budgetmax":"1000"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "700"}
+  - slot{"budgetmax": "1000"}
   - action_search_restaurants
   - utter_ask_email_id
 * restaurant_search{"email_id":"jhantu@outlook.com"}
   - action_send_email
   - utter_goodbye
   - action_restart
+
+## budget_fail_story
+* greet
+  - utter_greet
+* restaurant_search{"location":"hampi","cuisine":"thai"}
+  - slot{"location":"hampi"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location": "tokyo"}
+  - slot{"location": "tokyo"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location": "warangal"}
+  - slot{"location": "warangal"}
+  - action_validate_location
+  - slot{"location_ok": true}
+  - slot{"location": "warangal"}
+  - slot{"cuisine":"thai"}
+  - action_validate_cuisine
+  - slot{"cuisine_ok": false}
+  - utter_ask_cuisine
+* restaurant_search{"cuisine": "north indian"}
+  - slot{"cuisine": "north indian"}
+  - action_validate_cuisine
+  - slot{"cuisine_ok": true}
+  - slot{"cuisine": "north indian"}
+  - utter_ask_budget
+* restaurant_search{"budgetmin":"1100", "budgetmax":"1700"}
+  - slot{"budgetmin":"1100"}
+  - slot{"budgetmax":"1700"}
+  - action_validate_budget
+  - slot{"budget_ok": false}
+  - utter_ask_budget
+* restaurant_search{"budgetmin":"300", "budgetmax":"700"}
+  - slot{"budgetmin":"300"}
+  - slot{"budgetmax":"700"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
+  - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"srk@yahoo.com"}
+  - action_send_email
+  - utter_goodbye
+  - action_restart
+
+## budget_fail_story
+* greet
+  - utter_greet
+* restaurant_search{"location":"nawada","cuisine":"thai"}
+  - slot{"location":"nawada"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location": "jhumri"}
+  - slot{"location": "jhumri"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location": "Gorakhpur"}
+  - slot{"location": "Gorakhpur"}
+  - action_validate_location
+  - slot{"location_ok": true}
+  - slot{"location": "Gorakhpur"}
+  - slot{"cuisine":"thai"}
+  - action_validate_cuisine
+  - slot{"cuisine_ok": false}
+  - utter_ask_cuisine
+* restaurant_search{"cuisine": "south indian"}
+  - slot{"cuisine": "south indian"}
+  - action_validate_cuisine
+  - slot{"cuisine_ok": true}
+  - slot{"cuisine": "south indian"}
+  - utter_ask_budget
+* restaurant_search{"budgetmin":"1100", "budgetmax":"1700"}
+  - slot{"budgetmin":"1100"}
+  - slot{"budgetmax":"1700"}
+  - action_validate_budget
+  - slot{"budget_ok": false}
+  - utter_ask_budget
+* restaurant_search{"budgetmin":"300", "budgetmax":"700"}
+  - slot{"budgetmin":"300"}
+  - slot{"budgetmax":"700"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
+  - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"srk@yahoo.com"}
+  - action_send_email
+  - utter_goodbye
+  - action_restart
+
+## budget_fail_story
+* greet
+  - utter_greet
+* restaurant_search{"location":"koorg","cuisine":"south indian"}
+  - slot{"location":"koorg"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location": "nawadih"}
+  - slot{"location": "nawadih"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location": "warangal"}
+  - slot{"location": "warangal"}
+  - action_validate_location
+  - slot{"location_ok": true}
+  - slot{"location": "warangal"}
+  - slot{"cuisine": "south indian"}
+  - action_validate_cuisine
+  - slot{"cuisine_ok": true}
+  - slot{"cuisine": "south indian"}
+  - utter_ask_budget
+* restaurant_search{"budgetmin":"1100", "budgetmax":"1700"}
+  - slot{"budgetmin":"1100"}
+  - slot{"budgetmax":"1700"}
+  - action_validate_budget
+  - slot{"budget_ok": false}
+  - utter_ask_budget
+* restaurant_search{"budgetmin":"300", "budgetmax":"700"}
+  - slot{"budgetmin":"300"}
+  - slot{"budgetmax":"700"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
+  - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"srk@yahoo.com"}
+  - action_send_email
+  - utter_goodbye
+  - action_restart
+
+## budget_fail_story
+* greet
+  - utter_greet
+* restaurant_search{"location":"obra","cuisine":"mexican"}
+  - slot{"location":"obra"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location": "mandi"}
+  - slot{"location": "mandi"}
+  - action_validate_location
+  - slot{"location_ok": false}
+  - utter_ask_location
+* restaurant_search{"location": "warangal"}
+  - slot{"location": "warangal"}
+  - action_validate_location
+  - slot{"location_ok": true}
+  - slot{"location": "warangal"}
+  - slot{"cuisine": "mexican"}
+  - action_validate_cuisine
+  - slot{"cuisine_ok": true}
+  - slot{"cuisine": "mexican"}
+  - utter_ask_budget
+* restaurant_search{"budgetmin":"1100", "budgetmax":"1700"}
+  - slot{"budgetmin":"1100"}
+  - slot{"budgetmax":"1700"}
+  - action_validate_budget
+  - slot{"budget_ok": false}
+  - utter_ask_budget
+* restaurant_search{"budgetmin":"300", "budgetmax":"700"}
+  - slot{"budgetmin":"300"}
+  - slot{"budgetmax":"700"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "300"}
+  - slot{"budgetmax": "700"}
+  - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"srk@yahoo.com"}
+  - action_send_email
+  - utter_goodbye
+  - action_restart
+
+## budget_fail_story
+  * greet
+  - utter_greet
+* restaurant_search{"location":"surat","cuisine":"italian"}
+  - slot{"location":"surat"}
+  - action_validate_location
+  - slot{"location_ok": true}
+  - slot{"location":"surat"}
+  - slot{"cuisine":"italian"}
+  - action_validate_cuisine
+  - slot{"cuisine_ok": true}
+  - slot{"cuisine": "italian"}
+  - utter_ask_budget
+* restaurant_search{"budgetmin":"0", "budgetmax":"30"}
+  - slot{"budgetmin":"0"}
+  - slot{"budgetmax":"30"}
+  - action_validate_budget
+  - slot{"budget_ok": false}
+  - utter_ask_budget
+* restaurant_search{"budgetmin":"700", "budgetmax":"1000"}
+  - slot{"budgetmin":"700"}
+  - slot{"budgetmax":"1000"}
+  - action_validate_budget
+  - slot{"budget_ok": true}
+  - slot{"budgetmin": "700"}
+  - slot{"budgetmax": "1000"}
+  - action_search_restaurants
+  - utter_ask_email_id
+* restaurant_search{"email_id":"aamir@yahoo.com"}
+  - action_send_email
+  - utter_goodbye
+  - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "japanese", "location": "kolkata"}
+    - slot{"cuisine": "japanese"}
+    - slot{"location": "kolkata"}
+    - action_validate_location
+    - slot{"location_ok": true}
+    - slot{"location": "kolkata"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": false}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "North Indian"}
+    - slot{"cuisine": "North Indian"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": true}
+    - slot{"cuisine": "North Indian"}
+    - utter_ask_budget
+* restaurant_search{"budgetmax": "500"}
+    - slot{"budgetmax": "500"}
+    - action_validate_budget
+    - slot{"budgetmin": 0}
+    - slot{"budgetmax": 10000}
+    - slot{"budget_ok": false}
+    - utter_ask_budget
+* restaurant_search{"budgetmax": "300"}
+    - slot{"budgetmax": "300"}
+    - action_validate_budget
+    - slot{"budgetmin": 0}
+    - slot{"budgetmax": 300}
+    - slot{"budget_ok": true}
+    - action_search_restaurants
+    - slot{"location": "kolkata"}
+    - slot{"restaurant_exist": false}
+    - utter_ask_email_id
+* restaurant_search{"email_id": "foodiechatbot1@gmail.com"}
+    - slot{"email_id": "foodiechatbot1@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_2
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "chinese"}
+    - slot{"cuisine": "chinese"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": true}
+    - slot{"cuisine": "chinese"}
+    - utter_ask_location
+* restaurant_search{"location": "Delhi"}
+    - slot{"location": "Delhi"}
+    - action_validate_location
+    - slot{"location_ok": true}
+    - slot{"location": "Delhi"}
+    - utter_ask_budget
+    - slot{"budgetmin": 0}
+    - slot{"budgetmax": 10000}
+    - slot{"budget_ok": false}
+* restaurant_search{"budgetmin": "0", "budgetmax": "300"}
+    - slot{"budgetmax": "300"}
+    - slot{"budgetmin": "0"}
+    - action_validate_budget
+    - slot{"budgetmin": 0}
+    - slot{"budgetmax": 300}
+    - slot{"budget_ok": true}
+    - action_search_restaurants
+    - slot{"location": "Delhi"}
+    - slot{"restaurant_exist": true}
+    - utter_ask_email_id
+* restaurant_search{"email_id": "srk@gmail.com"}
+    - slot{"email_id": "srk@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_3
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "thai"}
+    - slot{"cuisine": "thai"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": false}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "American"}
+    - slot{"cuisine": "American"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": true}
+    - slot{"cuisine": "American"}
+    - utter_ask_location
+* restaurant_search{"location": "panagarh"}
+    - slot{"location": "panagarh"}
+    - action_validate_location
+    - slot{"location_ok": false}
+    - utter_ask_location
+* restaurant_search{"location": "Pune"}
+    - slot{"location": "Pune"}
+    - action_validate_location
+    - slot{"location_ok": true}
+    - slot{"location": "Pune"}
+    - utter_ask_budget
+* restaurant_search{"budgetmin": "700"}
+    - slot{"budgetmin": "700"}
+    - action_validate_budget
+    - slot{"budgetmin": 700}
+    - slot{"budgetmax": 10000}
+    - slot{"budget_ok": true}
+    - action_search_restaurants
+    - slot{"location": "Pune"}
+    - slot{"restaurant_exist": true}
+    - utter_ask_email_id
+* restaurant_search{"email_id": "salman@gmail.com"}
+    - slot{"email_id": "salman@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_4
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "japanese", "location": "kolkata"}
+    - slot{"cuisine": "japanese"}
+    - slot{"location": "kolkata"}
+    - action_validate_location
+    - slot{"location_ok": true}
+    - slot{"location": "kolkata"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": false}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "South Indian"}
+    - slot{"cuisine": "South Indian"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": true}
+    - slot{"cuisine": "South Indian"}
+    - utter_ask_budget
+* restaurant_search{"budgetmax": "500"}
+    - slot{"budgetmax": "500"}
+    - action_validate_budget
+    - slot{"budgetmin": 0}
+    - slot{"budgetmax": 10000}
+    - slot{"budget_ok": false}
+    - utter_ask_budget
+* restaurant_search{"budgetmax": "300"}
+    - slot{"budgetmax": "300"}
+    - action_validate_budget
+    - slot{"budgetmin": 0}
+    - slot{"budgetmax": 300}
+    - slot{"budget_ok": true}
+    - action_search_restaurants
+    - slot{"location": "kolkata"}
+    - slot{"restaurant_exist": false}
+    - utter_ask_email_id
+* restaurant_search{"email_id": "foodiechatbot1@gmail.com"}
+    - slot{"email_id": "foodiechatbot1@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_5
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "chinese"}
+    - slot{"cuisine": "chinese"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": true}
+    - slot{"cuisine": "chinese"}
+    - utter_ask_location
+* restaurant_search{"location": "Delhi"}
+    - slot{"location": "Delhi"}
+    - action_validate_location
+    - slot{"location_ok": true}
+    - slot{"location": "Delhi"}
+    - utter_ask_budget
+    - slot{"budgetmin": 0}
+    - slot{"budgetmax": 10000}
+    - slot{"budget_ok": false}
+* restaurant_search{"budgetmin": "0", "budgetmax": "300"}
+    - slot{"budgetmax": "300"}
+    - slot{"budgetmin": "0"}
+    - action_validate_budget
+    - slot{"budgetmin": 0}
+    - slot{"budgetmax": 300}
+    - slot{"budget_ok": true}
+    - action_search_restaurants
+    - slot{"location": "Delhi"}
+    - slot{"restaurant_exist": true}
+    - utter_ask_email_id
+* restaurant_search{"email_id": "srk@gmail.com"}
+    - slot{"email_id": "srk@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_6
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "briyani"}
+    - slot{"cuisine": "briyani"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": false}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "North Indian"}
+    - slot{"cuisine": "North Indian"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": true}
+    - slot{"cuisine": "North Indian"}
+    - utter_ask_location
+* restaurant_search{"location": "Pune"}
+    - slot{"location": "Pune"}
+    - action_validate_location
+    - slot{"location_ok": true}
+    - slot{"location": "Pune"}
+    - utter_ask_budget
+* restaurant_search{"budgetmin": "700"}
+    - slot{"budgetmin": "700"}
+    - action_validate_budget
+    - slot{"budgetmin": 700}
+    - slot{"budgetmax": 10000}
+    - slot{"budget_ok": true}
+    - action_search_restaurants
+    - slot{"restaurant_exist": true}
+    - utter_ask_email_id
+* restaurant_search{"email_id": "salman@gmail.com"}
+    - slot{"email_id": "salman@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_7
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "idly"}
+    - slot{"cuisine": "idly"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": false}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "briyani"}
+    - slot{"cuisine": "briyani"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": false}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "thai"}
+    - slot{"cuisine": "thai"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": false}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "hariyanvi"}
+    - slot{"cuisine": "hariyanvi"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": false}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "American"}
+    - slot{"cuisine": "American"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": true}
+    - slot{"cuisine": "American"}
+    - utter_ask_location
+* restaurant_search{"location": "Agra"}
+    - slot{"location": "Agra"}
+    - action_validate_location
+    - slot{"location_ok": true}
+    - slot{"location": "Agra"}
+    - utter_ask_budget
+* restaurant_search{"budgetmin": 300, "budgetmax": 700}
+    - slot{"budgetmax": 700}
+    - slot{"budgetmin": 300}
+    - action_validate_budget
+    - slot{"budgetmin": 300}
+    - slot{"budgetmax": 700}
+    - slot{"budget_ok": true}
+    - action_search_restaurants
+    - slot{"location": "Agra"}
+    - slot{"restaurant_exist": true}
+    - utter_ask_email_id
+* restaurant_search{"email_id": "rock@gmail.com"}
+    - slot{"email_id": "rock@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_8
+* greet  
+    - utter_greet
+* restaurant_search{"location": "Mumbai"}
+    - slot{"location": "Mumbai"}
+    - action_validate_location
+    - slot{"location_ok": true}
+    - slot{"location": "Mumbai"}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "hariyanvi"}
+    - slot{"cuisine": "hariyanvi"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": false}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "bihari"}
+    - slot{"cuisine": "bihari"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": false}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "South Indian"}
+    - slot{"cuisine": "South Indian"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": true}
+    - slot{"cuisine": "South Indian"}
+    - utter_ask_budget
+* restaurant_search{"budgetmin": "800"}
+    - slot{"budgetmin": "800"}
+    - action_validate_budget
+    - slot{"budgetmin": 0}
+    - slot{"budgetmax": 10000}
+    - slot{"budget_ok": false}
+    - utter_ask_budget
+* restaurant_search{"budgetmin": 700, "budgetmax": 1000}
+    - slot{"budgetmax": 1000}
+    - slot{"budgetmin": 700}
+    - action_validate_budget
+    - slot{"budgetmin": 700}
+    - slot{"budgetmax": 1000}
+    - slot{"budget_ok": true}
+    - action_search_restaurants
+    - slot{"location": "Mumbai"}
+    - slot{"restaurant_exist": true}
+    - utter_ask_email_id
+* goodbye
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_9
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "japanese"}
+    - slot{"cuisine": "japanese"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": false}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "Italian"}
+    - slot{"cuisine": "Italian"}
+    - action_validate_cuisine
+    - slot{"cuisine_ok": true}
+    - slot{"cuisine": "Italian"}
+    - utter_ask_location
+* restaurant_search{"location": "panagarh"}
+    - slot{"location": "panagarh"}
+    - action_validate_location
+    - slot{"location_ok": false}
+    - utter_ask_location
+* restaurant_search{"location": "Delhi"}
+    - slot{"location": "Delhi"}
+    - action_validate_location
+    - slot{"location_ok": true}
+    - slot{"location": "Delhi"}
+    - utter_ask_budget
+* restaurant_search{"budgetmin": "300"}
+    - slot{"budgetmin": "300"}
+    - action_validate_budget
+    - slot{"budgetmin": 300}
+    - slot{"budgetmax": 10000}
+    - slot{"budget_ok": true}
+    - action_search_restaurants
+    - slot{"location": "Delhi"}
+    - slot{"restaurant_exist": true}
+    - utter_ask_email_id
+* restaurant_search{"email_id": "foodiechatbot1@gmail.com"}
+    - slot{"email_id": "foodiechatbot1@gmail.com"}
+    - action_send_email
+* goodbye
+    - utter_goodbye
+    - action_restart
