@@ -92,6 +92,7 @@ class ActionSearchRestaurants(Action):
     def get_location_suggestions(self, loc, zomato):
         location_detail = zomato.get_location(loc, 1)
         d1 = json.loads(location_detail)
+        print(d1)
         lat = d1["location_suggestions"][0]["latitude"]
         lon = d1["location_suggestions"][0]["longitude"]
         results = len(d1["location_suggestions"])

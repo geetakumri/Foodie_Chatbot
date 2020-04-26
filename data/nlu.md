@@ -85,6 +85,7 @@
 - show me a [mexican](cuisine) place in the [centre](location)
 - i am looking for an [indian](cuisine) spot called olaolaolaolaolaola
 - search for restaurants
+- [bihari](cuisine) food
 - anywhere in the [west](location)
 - I am looking for [asian fusion](cuisine) food
 - I am looking a restaurant in [294328](location)
@@ -105,9 +106,19 @@
 - please help me to find restaurants in [pune](location)
 - Please find me a restaurantin [bangalore](location)
 - show me restaurants
+- im looking for good restaurants that servers [Mediterranean](cuisine) food
+- im looking for good restaurants that servers [Burger](cuisine)
+- im looking for some restaurants that gives [Sindhi](cuisine) cuisine
+- show me some [French](cuisine) restaurants
+- can i have [Beverages](cuisine) restaurants please
+- hw about [Lebanese](cuisine) food
+- what about [Goan](cuisine) restaurants in [dhanbad](location:Dhanbad)
 - i want to know good [japanese](cuisine) restaurants in [kolkata](location)
 - please find me [chinese](cuisine) restaurant in [delhi](location)
 - can you find me a [north india](cuisine:North Indian) restaurant
+- fancy [Bengali](restaurant)
+- [south indian](cuisine) kind food
+- how about some [Continental](cuisine) food
 - please find me a restaurant in [ahmedabad](location)
 - please show me a few [italian](cuisine) restaurants in [bangalore](location)
 - any [Italian](cuisine) place in [Lucknow](location) for range [500](budgetmin) - [700](budgetmax)
@@ -148,6 +159,165 @@
 - [aamir@in.com](email_id)
 - [amit@in.com](email_id)
 - [asha@in.com](email_id)
+- i want to know some good [japanese](cuisine) restaurants in [kolkata](location)
+- [north indian](cuisine:North Indian)
+- [0](budgetmin) - [500](budgetmax)
+- [0](budgetmin) - [300](budgetmax)
+- [foodiechatbot1@gmail.com](email_id)
+- want to know some good [chinese](cuisine) restauratns
+- [dilli](location:Delhi)
+- [0](budgetmin)-[300](budgetmax)
+- [srk@gmail.com](email_id)
+- want to know [thai](cuisine) restaurants
+- [North Indian](cuisine)
+- [puna](location:Pune)
+- [salman@gmail.com](email_id)
+- i wasy to know good [idly] restaurants(cuisine:idly)
+- [briyani](cuisine)
+- [thai](cuisine)
+- [hariyanvi](cuisine)
+- [American](cuisine)
+- [agra](location:Agra)
+- [rock@gmail.com](email_id)
+- want to know good restaurants in [mumbai](location:Mumbai)
+- [bihari](cuisine)
+- [South Indian](cuisine)
+- > [800](budgetmin)
+- suggest good [chinese](cuisine) restaurant
+- suggest [italian](cuisine) restaurant
+- suggest [mexican](cuisine) restaurants
+- show me good [japanese](cuisine) restaurants
+- [Italian](cuisine)
+- [panagarh](location)
+- [delhi](location:Delhi)
+- >[300](budgetmin)
+- [foodiechatbot1@gmail.com](email_id)
+- show me some [Turkish](cuisine) restaurants
+- show me some good [kabab](cuisine) restaurants
+- what are good [Mangalorean](cuisine) restaurants
+- help me with some good [German](cuisine) restaurants in [hyderabad](location)
+- can you find me some [Rajasthani](cuisine) restaurants in [chennai](location)
+- [Frozen Yogurt](cuisine)
+- [Asian](cuisine)
+- [Japanese](cuisine)- [Greek](cuisine)
+- [Bengali](cuisine)
+- [South Indian](cuisine)
+- [Indian](cuisine)
+- [Coffee](cuisine)
+- [Bihari](cuisine)
+- [Naga](cuisine)
+- [Afghan](cuisine)
+- [Mediterranean](cuisine)
+- [Panini](cuisine)
+- [Biryani](cuisine)
+- [Wraps](cuisine)
+- [Bangladeshi](cuisine)
+- [Cuisine Varies](cuisine)
+- [Burger](cuisine)
+- [Mongolian](cuisine)
+- [Coffee and Tea](cuisine)
+- [Moroccan](cuisine)
+- [Maharashtrian](cuisine)
+- [Street Food](cuisine)
+- [Middle Eastern](cuisine)
+- [Arabian](cuisine)
+- [Nepalese](cuisine)
+- [Bakery](cuisine)
+- [Sindhi](cuisine)
+- [Russian](cuisine)
+- [Singaporean](cuisine)
+- [Desserts](cuisine)
+- [British](cuisine)
+- [Kebab](cuisine)
+- [Grocery](cuisine)
+- [Bubble Tea](cuisine)
+- [Steak](cuisine)
+- [French](cuisine)
+- [Sri Lankan](cuisine)
+- [Beverages](cuisine)
+- [Iranian](cuisine)
+- [Turkish](cuisine)
+- [Hot dogs](cuisine)
+- [Australian](cuisine)
+- [Bohri](cuisine)
+- [Burmese](cuisine)
+- [Finger Food](cuisine)
+- [Tibetan](cuisine)
+- [Kerala](cuisine)
+- [Spanish](cuisine)
+- [Tex-Mex](cuisine)
+- [Mexican](cuisine)
+- [Korean](cuisine)
+- [Coke](cuisine)
+- [Malaysian](cuisine)
+- [Lebanese](cuisine)
+- [North Indian](cuisine)
+- [Modern Indian](cuisine)
+- [Chettinad](cuisine)
+- [Egyptian](cuisine)
+- [Chinese](cuisine)
+- [Roast Chicken](cuisine)
+- [Portuguese](cuisine)
+- [Hyderabadi](cuisine)
+- [Peruvian](cuisine)
+- [Ethiopian](cuisine)
+- [Armenian](cuisine)
+- [Sandwich](cuisine)
+- [Ice Cream](cuisine)
+- [Goan](cuisine)
+- [Mangalorean](cuisine)
+- [Lucknowi](cuisine)
+- [American](cuisine)
+- [Andhra](cuisine)
+- [Continental](cuisine)
+- [Momos](cuisine)
+- [Pakistani](cuisine)
+- [BBQ](cuisine)
+- [Juices](cuisine)
+- [North Eastern](cuisine)
+- [Paan](cuisine)
+- [Konkan](cuisine)
+- [Seafood](cuisine)
+- [Bar Food](cuisine)
+- [Pizza](cuisine)
+- [Grill](cuisine)
+- [Fusion](cuisine)
+- [German](cuisine)
+- [Israeli](cuisine)
+- [Awadhi](cuisine)
+- [Raw Meats](cuisine)
+- [Cantonese](cuisine)
+- [Indonesian](cuisine)
+- [Thai](cuisine)
+- [Drinks Only](cuisine)
+- [Charcoal Chicken](cuisine)
+- [Odia](cuisine)
+- [Belgian](cuisine)
+- [Mughlai](cuisine)
+- [Tea](cuisine)
+- [Sushi](cuisine)
+- [European](cuisine)
+- [Parsi](cuisine)
+- [African](cuisine)
+- [Rajasthani](cuisine)
+- [Healthy Food](cuisine)
+- [Brazilian](cuisine)
+- [Kashmiri](cuisine)
+- [Fast Food](cuisine)
+- [Italian](cuisine)
+- [Malwani](cuisine)
+- [Rolls](cuisine)
+- [South American](cuisine)
+- [Assamese](cuisine)
+- [Vietnamese](cuisine)
+- [Mishti](cuisine)
+- [Gujarati](cuisine)
+- [Cafe](cuisine)
+- [Relief fund](cuisine)
+- [Wraps](cuisine)
+- [Mithai](cuisine)
+- [Salad](cuisine)
+- [Tamil](cuisine)
 - [Agra](location)
 - [Ahmedabad](location)
 - [Ajmer](location)
@@ -252,45 +422,6 @@
 - [Vijayawada](location)
 - [Visakhapatnam](location)
 - [Warangal](location)
-- [chinese](cuisine)
-- [american](cuisine)
-- [south indian](cuisine)
-- [north indian](cuisine)
-- [italian](cuisine)
-- [mexican](cuisine)
-- i want to know some good [japanese](cuisine) restaurants in [kolkata](location)
-- [north indian](cuisine:North Indian)
-- [0](budgetmin) - [500](budgetmax)
-- [0](budgetmin) - [300](budgetmax)
-- [foodiechatbot1@gmail.com](email_id)
-- want to know some good [chinese](cuisine) restauratns
-- [dilli](location:Delhi)
-- [0](budgetmin)-[300](budgetmax)
-- [srk@gmail.com](email_id)
-- want to know [thai](cuisine) restaurants
-- [North Indian](cuisine)
-- [puna](location:Pune)
-- [salman@gmail.com](email_id)
-- i wasy to know good idly restaurants[](cuisine:idly)
-- [briyani](cuisine)
-- [thai](cuisine)
-- [hariyanvi](cuisine)
-- [American](cuisine)
-- [agra](location:Agra)
-- [rock@gmail.com](email_id)
-- want to know good restaurants in [mumbai](location:Mumbai)
-- [bihari](cuisine)
-- [South Indian](cuisine)
-- > [800](budgetmin)
-- suggest good [chinese](cuisine) restaurant
-- suggest [italian](cuisine) restaurant
-- suggest [mexican](cuisine) restaurants
-- show me good [japanese](cuisine) restaurants
-- [Italian](cuisine)
-- [panagarh](location)
-- [delhi](location:Delhi)
-- >[300](budgetmin)
-- [foodiechatbot1@gmail.com](email_id)
 
 ## synonym: Bhopal
 - bhopal
@@ -789,3 +920,366 @@
 
 ## regex:pincode
 - [0-9]{6}
+
+## synonym:Frozen Yogurt
+- frozen yogurt
+
+## synonym:Asian
+- asian
+
+## synonym:Japanese
+- japanese
+
+## synonym:Greek
+- greek
+
+## synonym:Bengali
+- bengali
+
+## synonym:South Indian
+- south indian
+
+## synonym:Indian
+- indian
+
+## synonym:Coffee
+- coffee
+
+## synonym:Bihari
+- bihari
+
+## synonym:Naga
+- naga
+
+## synonym:Afghan
+- afghan
+
+## synonym:Mediterranean
+- mediterranean
+
+## synonym:Panini
+- panini
+
+## synonym:Biryani
+- biryani
+
+## synonym:Wraps
+- wraps
+
+## synonym:Bangladeshi
+- bangladeshi
+
+## synonym:Cuisine Varies
+- cuisine varies
+
+## synonym:Burger
+- burger
+
+## synonym:Mongolian
+- mongolian
+
+## synonym:Coffee and Tea
+- coffee and tea
+
+## synonym:Moroccan
+- moroccan
+
+## synonym:Maharashtrian
+- maharashtrian
+
+## synonym:Street Food
+- street food
+
+## synonym:Middle Eastern
+- middle eastern
+
+## synonym:Arabian
+- arabian
+
+## synonym:Nepalese
+- nepalese
+
+## synonym:Bakery
+- bakery
+
+## synonym:Sindhi
+- sindhi
+
+## synonym:Russian
+- russian
+
+## synonym:Singaporean
+- singaporean
+
+## synonym:Desserts
+- desserts
+
+## synonym:British
+- british
+
+## synonym:Kebab
+- kebab
+
+## synonym:Grocery
+- grocery
+
+## synonym:Bubble Tea
+- bubble tea
+
+## synonym:Steak
+- steak
+
+## synonym:French
+- french
+
+## synonym:Sri Lankan
+- sri lankan
+
+## synonym:Beverages
+- beverages
+
+## synonym:Iranian
+- iranian
+
+## synonym:Turkish
+- turkish
+
+## synonym:Hot dogs
+- hot dogs
+
+## synonym:Australian
+- australian
+
+## synonym:Bohri
+- bohri
+
+## synonym:Burmese
+- burmese
+
+## synonym:Finger Food
+- finger food
+
+## synonym:Tibetan
+- tibetan
+
+## synonym:Kerala
+- kerala
+
+## synonym:Spanish
+- spanish
+
+## synonym:Tex-Mex
+- tex-mex
+
+## synonym:Mexican
+- mexican
+
+## synonym:Korean
+- korean
+
+## synonym:Coke
+- coke
+
+## synonym:Malaysian
+- malaysian
+
+## synonym:Lebanese
+- lebanese
+
+## synonym:North Indian
+- north indian
+
+## synonym:Modern Indian
+- modern indian
+
+## synonym:Chettinad
+- chettinad
+
+## synonym:Egyptian
+- egyptian
+
+## synonym:Roast Chicken
+- roast chicken
+
+## synonym:Portuguese
+- portuguese
+
+## synonym:Hyderabadi
+- hyderabadi
+
+## synonym:Peruvian
+- peruvian
+
+## synonym:Ethiopian
+- ethiopian
+
+## synonym:Armenian
+- armenian
+
+## synonym:Sandwich
+- sandwich
+
+## synonym:Ice Cream
+- ice cream
+
+## synonym:Goan
+- goan
+
+## synonym:Mangalorean
+- mangalorean
+
+## synonym:Lucknowi
+- lucknowi
+
+## synonym:American
+- american
+
+## synonym:Andhra
+- andhra
+
+## synonym:Continental
+- continental
+
+## synonym:Momos
+- momos
+
+## synonym:Pakistani
+- pakistani
+
+## synonym:BBQ
+- bbq
+
+## synonym:Juices
+- juices
+
+## synonym:North Eastern
+- north eastern
+
+## synonym:Paan
+- paan
+
+## synonym:Konkan
+- konkan
+
+## synonym:Seafood
+- seafood
+
+## synonym:Bar Food
+- bar food
+
+## synonym:Pizza
+- pizza
+
+## synonym:Grill
+- grill
+
+## synonym:Fusion
+- fusion
+
+## synonym:German
+- german
+
+## synonym:Israeli
+- israeli
+
+## synonym:Awadhi
+- awadhi
+
+## synonym:Raw Meats
+- raw meats
+
+## synonym:Cantonese
+- cantonese
+
+## synonym:Indonesian
+- indonesian
+
+## synonym:Thai
+- thai
+
+## synonym:Drinks Only
+- drinks only
+
+## synonym:Charcoal Chicken
+- charcoal chicken
+
+## synonym:Odia
+- odia
+
+## synonym:Belgian
+- belgian
+
+## synonym:Mughlai
+- mughlai
+
+## synonym:Tea
+- tea
+
+## synonym:Sushi
+- sushi
+
+## synonym:European
+- european
+
+## synonym:Parsi
+- parsi
+
+## synonym:African
+- african
+
+## synonym:Rajasthani
+- rajasthani
+
+## synonym:Healthy Food
+- healthy food
+
+## synonym:Brazilian
+- brazilian
+
+## synonym:Kashmiri
+- kashmiri
+
+## synonym:Fast Food
+- fast food
+
+## synonym:Italian
+- italian
+
+## synonym:Malwani
+- malwani
+
+## synonym:Rolls
+- rolls
+
+## synonym:South American
+- south american
+
+## synonym:Assamese
+- assamese
+
+## synonym:Vietnamese
+- vietnamese
+
+## synonym:Mishti
+- mishti
+
+## synonym:Gujarati
+- gujarati
+
+## synonym:Cafe
+- cafe
+
+## synonym:Relief fund
+- relief fund
+
+## synonym:Wraps
+- wraps
+
+## synonym:Mithai
+- mithai
+
+## synonym:Salad
+- salad
+
+## synonym:Tamil
+- tamil
