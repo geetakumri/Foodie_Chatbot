@@ -3,28 +3,33 @@ actions:
 - action_send_email
 - action_validate_budget
 - action_validate_cuisine
+- action_validate_email_id
 - action_validate_location
 - utter_ask_budget
 - utter_ask_cuisine
 - utter_ask_email_id
 - utter_ask_location
 - utter_default
+- utter_email_validation_failed
 - utter_goodbye
 - utter_greet
 - utter_happy
 - utter_iamabot
+- utter_whether_to_email
 entities:
 - budgetmax
 - budgetmin
 - cuisine
+- deny
 - email_id
 - location
 intents:
-- restaurant_search
+- affirm
 - greet
+- restaurant_search
+- deny
 - stop
 - goodbye
-- affirm
 - bot_challenge
 - mood_great
 - inform
@@ -35,7 +40,7 @@ responses:
       title: Less than 300
     - payload: /restaurant_search{"budgetmin":300,"budgetmax":700}
       title: Rs 300 to Rs 700
-    - payload: /restaurant_search{"budgetmin":700,"budgetmax":1000}
+    - payload: /restaurant_search{"budgetmin":700,"budgetmax":10000}
       title: More than 700
     text: What price range are you looking for?
   utter_ask_cuisine:
@@ -54,14 +59,15 @@ responses:
       title: Mexican
     text: what kind of cuisine would you like?
   utter_ask_email_id:
-  - text: If you want to get restaurants details on your email. Please enter your
-      email_id.
+  - text: To what email id should I send?
   utter_ask_location:
   - text: In what location?
   utter_default:
   - text: Sorry, didn't get you.
+  utter_email_validation_failed:
+  - text: You have entered an invalid email id. Please enter your email id again.
   utter_goodbye:
-  - text: Bye
+  - text: Thank you for choosing Foodie. Good Bye
   utter_greet:
   - text: hey there! How may i help you?
   - text: Hi, How can I help you?
@@ -70,6 +76,8 @@ responses:
   - text: Great, carry on!
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
+  utter_whether_to_email:
+  - text: Should I send you details of all the restaurants on email?
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60
@@ -83,7 +91,7 @@ slots:
     min_value: 0.0
     type: float
   budgetmin:
-    initial_value: 1.0
+    initial_value: 0.0
     max_value: 700.0
     min_value: 0.0
     type: float
@@ -94,6 +102,9 @@ slots:
     type: bool
   email_id:
     type: text
+  email_ok:
+    initial_value: false
+    type: bool
   location:
     type: text
   location_ok:
